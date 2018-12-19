@@ -12,7 +12,10 @@
 ### Coding manifesto
 
 #### Get to the first production version with as little effort as possible
-Right now I may *think* I know what I am doing, but I really do not. Therefore I should get to the first version with as little effort as possible.
+Right now I may *think* I know what I am doing. However, I really do not. 
+
+For this reason, I should get to the first version with as little effort as possible.
+
 This means I should build the first code version of any project with (in order of importance):
 
 ##### As simple code as possible (simple beats DRY)
