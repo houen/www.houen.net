@@ -3,7 +3,7 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Coding manifesto](#coding-manifesto)
-  - [First code version](#first-code-version)
+  - [Get to the first production version with as little effort as possible](#get-to-the-first-production-version-with-as-little-effort-as-possible)
     - [As simple code as possible (simple beats DRY)](#as-simple-code-as-possible-simple-beats-dry)
     - [As little code as possible](#as-little-code-as-possible)
 
