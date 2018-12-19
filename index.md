@@ -12,11 +12,7 @@
 ### Coding manifesto
 
 #### Get to the first production version with as little effort as possible
-Right now I may *think* I know what I am doing. However, I really do not. 
-
-For this reason, I should get to the first version with as little effort as possible.
-
-This means I should build the first code version of any project with (in order of importance):
+Right now I may *think* I know what I am doing. However, I really do not. For this reason, I should get to the first version with as little effort as possible. This means I should build the first production version of any project with (in order of importance):
 
 ##### As simple code as possible (simple beats DRY)
 Simple code beats clever code - this is doubly true for the first version! Clever code may be easier to extend / adapt, but it is harder to *fundamentally* change. The likelihood is very high that I will have to fundamentally change the first version of any project.
