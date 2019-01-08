@@ -5,23 +5,23 @@
 - [Work guide](#work-guide)
   - [Coding](#coding)
     - [Get to the first production version with as little effort as possible](#get-to-the-first-production-version-with-as-little-effort-as-possible)
-      - [As simple code as possible (simple beats DRY)](#as-simple-code-as-possible-simple-beats-dry)
-      - [As little code as possible](#as-little-code-as-possible)
   - [Collaboration](#collaboration)
     - [Ubiquitous language](#ubiquitous-language)
-      - [What is it?](#what-is-it)
-      - [Why is it so important?](#why-is-it-so-important)
-      - [How do you achieve it?](#how-do-you-achieve-it)
     - [Reviewing pull requests](#reviewing-pull-requests)
-      - [Always be polite and friendly](#always-be-polite-and-friendly)
-      - [Misunderstandings can very easily happen](#misunderstandings-can-very-easily-happen)
   - [Agile](#agile)
     - [Daily standup](#daily-standup)
   - [Documentation](#documentation)
+  - [Tools](#tools)
+    - [Clipboard history](#clipboard-history)
+  - [Hiring](#hiring)
+    - [Getting the right people on the bus](#getting-the-right-people-on-the-bus)
+    - [Interview process](#interview-process)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Work guide
+<!-- https://guides.github.com/features/mastering-markdown/ -->
+
 
 ### Coding
 
@@ -77,3 +77,30 @@ Daily standups are a very important tool in the agile workflow.
 Any system is only as good as its documentation.
 
 <!-- #### Be explicit -->
+<!-- #### Documenting architecture decisions
+http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions -->
+
+<!-- ### Books
+
+- DDD: Eric Evans, Domain Drive Design. [O'Reilly](https://www.oreilly.com/library/view/domain-driven-design-tackling/0321125215/)
+- Getting Real
+- https://www.amazon.com/Smart-Gets-Things-Done-Technical/dp/1590598385
+- https://www.amazon.de/dp/0066620996/ref=asc_df_006662099657912267/?tag=googshopde-21&creative=22398&creativeASIN=0066620996&linkCode=df0&hvadid=310779890634&hvpos=1o1&hvnetw=g&hvrand=10823028277884438276&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1003854&hvtargid=pla-425752468924&th=1&psc=1&tag=&ref=&adgrpid=70301320708&hvpone=&hvptwo=&hvadid=310779890634&hvpos=1o1&hvnetw=g&hvrand=10823028277884438276&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1003854&hvtargid=pla-425752468924 -->
+
+### Tools
+#### Clipboard history
+I originally stumbled upon this as [advice given by Jeff Atwood](https://lifehacker.com/5950386/im-jeff-atwood-founder-of-stack-exchange-and-this-is-how-i-work), the founder of Stack Overflow. I had never used a Clipboard history app before. Now, 3 years later, I would never, ever live without it. 
+
+The best one (as far as I know) for OSX is [Alfred with the Powerpack addon](https://www.alfredapp.com/).
+
+### Hiring
+#### Getting the right people on the bus
+You should hire engineers for, in order of priority:
+
+1. Cultural fit
+1. Work Ethics / Gets shit done
+1. Raw intelligence
+1. Specific languages / skills (e.g. Java, DevOps, CI/CD experience)
+
+#### Interview process
+- If there is any doubt, there is no doubt
