@@ -31,6 +31,20 @@ Get to the first version with as little effort as possible.
 
 ### Collaboration
 
+#### Ubiquitous language
+##### What is it?
+In the words of [Martin Fowler](https://martinfowler.com/bliki/UbiquitousLanguage.html): "the practice of building up a common, rigorous language between developers and users".
+
+To put it more plainly: 
+
+> A company must always ensure that developers use the same names and words to describe the business concepts as your developers.
+
+##### Why is it so important?
+One of my key takeaways from the amazing [DDD book](https://www.oreilly.com/library/view/domain-driven-design-tackling/0321125215/) is that an Ubiquitous Language is one of the most important things to create and maintain in a software company. I have worked in companies where there was no Ubiquitous Language. It was not good.
+
+##### How do you achieve it?
+By making it an explicit requirement. And then doing the work to ensure it happens and stays that way.
+
 #### Reviewing pull requests
 
 ##### Always be polite and friendly
