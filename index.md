@@ -2,14 +2,21 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [Coding manifesto](#coding-manifesto)
-  - [Get to the first production version with as little effort as possible](#get-to-the-first-production-version-with-as-little-effort-as-possible)
-    - [As simple code as possible (simple beats DRY)](#as-simple-code-as-possible-simple-beats-dry)
-    - [As little code as possible](#as-little-code-as-possible)
+- [Work guide](#work-guide)
+  - [Coding](#coding)
+    - [Get to the first production version with as little effort as possible](#get-to-the-first-production-version-with-as-little-effort-as-possible)
+      - [As simple code as possible (simple beats DRY)](#as-simple-code-as-possible-simple-beats-dry)
+      - [As little code as possible](#as-little-code-as-possible)
+  - [Collaboration](#collaboration)
+    - [Reviewing pull requests](#reviewing-pull-requests)
+      - [Always be polite and friendly](#always-be-polite-and-friendly)
+      - [Misunderstandings can very easily happen](#misunderstandings-can-very-easily-happen)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-### Coding manifesto
+## Work guide
+
+### Coding
 
 #### Get to the first production version with as little effort as possible
 Right now I may *think* I know what I am doing. However, I really do not. For this reason, I should get to the first version with as little effort as possible. This means I should build the first production version of any project with (in order of importance):
@@ -21,3 +28,19 @@ Simple code beats clever code - this is doubly true for the first version! Cleve
 Right now I may *think* I know what I am doing, but *I really don't*. Therefore I should get to the first version with as little effort as possible. This means I should not waste time on clever code.
 
 Get to the first version with as little effort as possible.
+
+### Collaboration
+
+#### Reviewing pull requests
+
+##### Always be polite and friendly
+A pull request is a place for friendly collaboration. It is not a battleground. Always be nice and friendly to each other.
+
+##### Misunderstandings can very easily happen
+Remember, it is very easy for misunderstandings to happen over a text-based medium. Something you write in a slightly annoyed tone might be read as a fiery insult by the receiver. Just dont do it.
+
+Strong disagreements happen. It is best to solve these face-to-face, else over the phone, or lastly via synchronous chat. 
+
+Come to the best agreement you can. Then respectfully describe the different viewpoints and what the outcome of the discussion was.
+
+Jokes are of course okay, but should be used with caution. This is also because of the risk of misunderstandings.
