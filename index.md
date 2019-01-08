@@ -58,3 +58,15 @@ Strong disagreements happen. It is best to solve these face-to-face, else over t
 Come to the best agreement you can. Then respectfully describe the different viewpoints and what the outcome of the discussion was.
 
 Jokes are of course okay, but should be used with caution. This is also because of the risk of misunderstandings.
+
+### Agile
+Agile is such an integral part of our work life today that it deserves its own section.
+
+#### Daily standup
+Daily standups are a very important tool in the agile workflow.
+
+### Documentation
+
+Any system is only as good as its documentation.
+
+<!-- #### Be explicit -->
