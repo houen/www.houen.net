@@ -8,9 +8,16 @@
       - [As simple code as possible (simple beats DRY)](#as-simple-code-as-possible-simple-beats-dry)
       - [As little code as possible](#as-little-code-as-possible)
   - [Collaboration](#collaboration)
+    - [Ubiquitous language](#ubiquitous-language)
+      - [What is it?](#what-is-it)
+      - [Why is it so important?](#why-is-it-so-important)
+      - [How do you achieve it?](#how-do-you-achieve-it)
     - [Reviewing pull requests](#reviewing-pull-requests)
       - [Always be polite and friendly](#always-be-polite-and-friendly)
       - [Misunderstandings can very easily happen](#misunderstandings-can-very-easily-happen)
+  - [Agile](#agile)
+    - [Daily standup](#daily-standup)
+  - [Documentation](#documentation)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
