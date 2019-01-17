@@ -52,8 +52,8 @@ One of my key takeaways from the amazing [DDD book](https://www.oreilly.com/libr
 ##### How do you achieve it?
 By making it an explicit requirement. And then doing the work to ensure it happens and stays that way.
 
-#### Reviewing pull requests
 
+#### Reviewing pull requests
 ##### Always be polite and friendly
 A pull request is a place for friendly collaboration. It is not a battleground. Always be nice and friendly to each other.
 
@@ -69,8 +69,66 @@ Jokes are of course okay, but should be used with caution. This is also because 
 ### Agile
 Agile is such an integral part of our work life today that it deserves its own section.
 
-#### Daily standup
-Daily standups are a very important tool in the agile workflow.
+#### Ticketing system
+Most companies use some form of ticketing system: Jira, Trello, Github, Gitlab or another.
+
+##### Work in a ticket-first manner
+When working on a task, sheperd its ticket through the system. This means adopting some version of the following:
+
+- Move the ticket from "backlog" to "in progress"
+- Then open a git branch
+- Work the ticket
+- Open a pull request, get it reviewed, merge the code
+- Now move the ticket to done.
+
+Many companies use more ticketing "buckets" than Backlog, In progress, and Done, so the above will need to be expanded as fitting. A common Jira column for instance is "To Review" to give Product Owners an overview of the tickets that are "almost done".
+
+##### Reduce WIP
+Work-in-progress, or WIP, should be reduced as much as possible. The reason for this is:
+
+- Context switching
+- Collaboration overhead
+- Planning overhead
+
+The context switching is by far the worst culprit of the above. Whenever a developer is working on more than one task at a time, they need to spend a non-trivial amount of time wrapping their head around both the business domain, the change we are trying to do with the code, as well as the code itself. In complex domains, changes or code, this can amount to a massive amount of overhead and time wasted. Don't do it. If at all possible, work on one thing at a time. 
+
+##### Create topical git branches
+Create a single git branch per ticket. Work on that single branch. Sometimes a branch cannot or should not be merged into master by itself. In this case, create a pull request to a larger "epic" branch and merge into that. Then when the Epic branch is ready to merge to master create a pull request to do so.
+
+##### Adopt a rigid structure for branch naming
+The main reason for both git and ticketing systems is collaboration. To simplify this, adopt some form of rigid structure for naming branches. This way, anyone can more easily find a branch for a ticket and a ticket for a branch. I normally use some form of the following:
+
+```
+# Structure
+[board_or_project_key]-[ticket_number]-short-desription-for-clarity
+```
+
+Keep the board_or_project_key short so it is not a pain to write all the time. For instance, for Jira you often have a team board, and it makes sense to use a short version of the team name.
+
+For example, for the CAP team and ticket number 42 with the title "Add create user POST endpoint":
+
+```
+cap-42-add-create-user-post-endpoint
+```
+
+The benefit here is that anyone looking at the ticket will instantly know pretty much what the branch is called. Even if the branch is for some reason not linked to the ticket properly. And anyone looking at the branch will be able to easily find the ticket by either the cap-42 part or the name.
+
+#### Daily stand-up
+Daily standups are a very important tool in the agile workflow. They should be kept very, very short. About one minute per participant. Standups are a place to *figure out if more collaboration is needed*. It is a place where we give a very short overview of our work. Thisd is so other team members can figure out if they need to give input on it.
+
+A good structure is something like the following:
+
+- What did I do yesterday?
+- What have / will I do today?
+- Is anything blocking me?
+
+##### Guarding against long stand-up discussions
+Often discussions come up at stand-up. This is exactly because they are about collaboration. Most of the time this is simply something like the following:
+- "I did X", "Oh nice, does this mean Y", "Yes it does".
+- "I am blocked by X", "Oh, I think you should look at Y", "Nah, I already tried that, didnt work", "Ok, maybe I come by later"
+
+The problem is when two people disagree about something important to them. Then you can have a very long and heated discussion during standup.
+To alleviate this problem, simply adopt the rule that it is always acceptable to ask *"hey, can we take this after standup?"*. Then, whoever has a stake in the discussion simply stays behind after standup in order to finish what they were talking about. This should be done any time a discussion is more than five to ten sentences.
 
 ### Documentation
 
@@ -89,7 +147,7 @@ http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions -->
 
 ### Tools
 #### Clipboard history
-I originally stumbled upon this as [advice given by Jeff Atwood](https://lifehacker.com/5950386/im-jeff-atwood-founder-of-stack-exchange-and-this-is-how-i-work), the founder of Stack Overflow. I had never used a Clipboard history app before. Now, 3 years later, I would never, ever live without it. 
+I originally stumbled upon this as [advice given by Jeff Atwood](https://lifehacker.com/5950386/im-jeff-atwood-founder-of-stack-exchange-and-this-is-how-i-work), the founder of Stack Overflow. I had never used a Clipboard history app before. Now, 3 years later, I would not want to code without it. 
 
 The best one (as far as I know) for OSX is [Alfred with the Powerpack addon](https://www.alfredapp.com/).
 
