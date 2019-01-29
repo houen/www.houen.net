@@ -130,7 +130,11 @@ http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions -->
 
 ### Tools
 #### Clipboard history
-I originally stumbled upon this as [advice given by Jeff Atwood](https://lifehacker.com/5950386/im-jeff-atwood-founder-of-stack-exchange-and-this-is-how-i-work), the founder of Stack Overflow. I had never used a Clipboard history app before. Now, 3 years later, I would not want to code without it. 
+> Use a clipboard history manager. Even if you think you do not need it. Try it out for two weeks.
+
+I originally stumbled upon the advice of using a clipboard history manager [from an interview with Jeff Atwood](https://lifehacker.com/5950386/im-jeff-atwood-founder-of-stack-exchange-and-this-is-how-i-work), the founder of Stack Overflow. 
+
+I had never used a Clipboard history app before. Now, 3 years later, I would not want to code without it. 
 
 The best one (as far as I know) for OSX is [Alfred with the Powerpack addon](https://www.alfredapp.com/).
 
