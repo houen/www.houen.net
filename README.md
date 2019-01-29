@@ -1,25 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [Work guide](#work-guide)
-  - [Coding](#coding)
-    - [Get to the first production version with as little effort as possible](#get-to-the-first-production-version-with-as-little-effort-as-possible)
-  - [Collaboration](#collaboration)
-    - [Ubiquitous language](#ubiquitous-language)
-    - [Reviewing pull requests](#reviewing-pull-requests)
-  - [Agile](#agile)
-    - [Ticketing system](#ticketing-system)
-    - [Daily stand-up](#daily-stand-up)
-  - [Documentation](#documentation)
-  - [Tools](#tools)
-    - [Clipboard history](#clipboard-history)
-  - [Hiring](#hiring)
-    - [Getting the right people on the bus](#getting-the-right-people-on-the-bus)
-    - [Interview process](#interview-process)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 ## Work guide
 <!-- https://guides.github.com/features/mastering-markdown/ -->
 
