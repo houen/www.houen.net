@@ -52,6 +52,66 @@ Jokes are of course okay, but should be used with caution. This is also because 
 ### Agile
 Agile is such an integral part of our work life today that it deserves its own section.
 
+#### Regular retrospectives
+Retrospectives are in my opinion the most important part of Agile. 
+
+Retrospectives is the time we take to not just work but *improve how we work*. If your team was a saw, retrospectives is the time you take to sharpen that saw.
+
+Retrospectives should be held once every sprint or every two weeks. This fits with most sprint schedules, either every halfway or at sprint end.
+
+Even if your team uses none of the other parts of Agile, adopt regular retrospectives.
+
+##### Main purposes
+- Improve team collaboration
+- Remove team roadblocks
+- Having a space to bring up issues which need to be brought higher up the chain
+- Letting team members vent their issues
+- Celebrate successes
+- Practive gratitude
+    - A proven way to increase happines, which is a proven way to increase productivity
+
+##### Attendees
+- The entire team, both developers, product owners and direct manager if there is one
+- A retrospective coach
+
+Note: For this section I will assume a team size of maximum six people. If more people, you will need to adjust as needed.
+
+##### Tools
+- A big board or wall
+- Lots of post-its
+- Semi-fat permanent markers
+
+##### Rules
+It is okay to disagree, but we must always be courteous and nice to each other.
+
+##### Process
+The team members will be answering three questions:
+
+###### Topics
+1. What went well?
+1. What did not go so well?
+1. How can we improve?
+
+###### Topic process
+1. Everyone writes down topic answers
+1. Each team member presents their answers
+1. Answers are grouped
+1. Each team member rates the groupings
+1. The groupings are discussed, starting with highest rated
+
+The coach points to the first question "What went well" and asks the team to write down at least three answers. The team should have at least five minutes for this. 
+
+After the time is up, every team member presents their answers *and why they feel it is important*. Nobody else comments, unless it is to clarify the meaning. 
+
+Once every team member has done this, answers are grouped so common themes emerge where possible: "Deployment issues" and "The servers crashed again" might be grouped together since both are about servers / devops. "User onboarding is a pain to change" and "Welcome emails are a mess" might also be grouped since both have to do with technical debt regarding the new user flow.
+
+What groupings to use is very dependent on the business domain and specific team issues. The team will make their own sense of the answers.
+
+After answers have been grouped, each team member states what they find important by placing 3-5 dots on one or more groupings. This way the team votes on what is the main issues according to them.
+
+Once answers are voted on, they are discussed as time and energy allows, starting with the ones voted most important.
+
+
 #### Ticketing system
 Most companies use some form of ticketing system: Jira, Trello, Github, Gitlab or another.
 
@@ -110,23 +170,64 @@ Often discussions come up at stand-up. This is exactly because they are about co
 - "I did X", "Oh nice, does this mean Y", "Yes it does".
 - "I am blocked by X", "Oh, I think you should look at Y", "Nah, I already tried that, didnt work", "Ok, maybe I come by later"
 
-The problem is when two people disagree about something important to them. Then you can have a very long and heated discussion during standup.
-To alleviate this problem, simply adopt the rule that it is always acceptable to ask *"hey, can we take this after standup?"*. Then, whoever has a stake in the discussion simply stays behind after standup in order to finish what they were talking about. This should be done any time a discussion is more than five to ten sentences.
+The problem is when two people disagree about something important to them:
+
+- "I think we should do X", "I think Y is better" or "I agree, but we should be X2 instead"
+
+Then you can have a very long and heated discussion during standup.
+
+To alleviate this problem, simply adopt the rule that it is always acceptable to ask "*hey, can we take this after standup?*". 
+
+Then, whoever has a stake in the discussion simply stays behind after standup in order to finish what they were talking about. 
+
+This should be done any time a discussion is more than five to ten sentences.
+
+#### Sprints
+An important note about sprints:
+
+> The purpose of sprints is to improve our guesswork so plans can be made with higher confidence
+
+The main purpose of a sprint is not to scramble and rush to finish. It is to see how much work was done, so we can estimate how likely our larger deadlines are to hold water. 
+
+I have found that often upper management care more about simply knowing if a project is on track or not. If not, how much is it off?
+
+This way we are less likely to find big scary monsters in the closet three months / one year in. We need to find those bad boys as early as possible.
+
+This:
+
+"Based on Sprint performance in sprints one to six, we are expecting to be one month delayed total compared to original estimates." 
+
+Is better than:
+
+"We are behind on sprint six of sixteen by [no idea] but we are working overtime to catch up"
+
+With the second message, we have no idea how the next sprints will look or how much the project will be delayed total. Worse, we are risking burnout and much larger delays by trying to "catch up".
+
+Of course it is all guesswork. And that is what sprints are about: Improving our guesswork so plans can be made with higher confidence.
+
+#### Kanban or Sprints
+This choice depends largely on the level of syncing up required between teams. If three different teams need to finish a single product together, then sprints are probably what you need. If a single team is largely delivering business value independently, you may want to use Kanban instead. Kanban is often a more natural way of working in programming and has much less planning overhead than the sprint structure.
 
 ### Documentation
+Yes, it is a tired trope, but it is still true:
 
-Any system is only as good as its documentation.
+> Any system is only as good as its documentation.
 
-<!-- #### Be explicit -->
+#### Be explicit
+You often see things which are implicitly understood in a system. Things which people are expected to "just know". This is implicit knowledge. Some of it is fine and unavoidable of course. The problem comes when you have too much implicit knowledge. Now it is hindering progress. 
+
+Too much implicit knowledge has two dangers:
+- It is forgotten and takes a long time to recover / reverse engineer
+- Developers and users need to keep this knowledge in their head all the time while working. This leaves less room for thoughts about progress.
+
+#### Be concise
 <!-- #### Documenting architecture decisions
 http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions -->
 
-<!-- ### Books
-
-- DDD: Eric Evans, Domain Drive Design. [O'Reilly](https://www.oreilly.com/library/view/domain-driven-design-tackling/0321125215/)
-- Getting Real
-- https://www.amazon.com/Smart-Gets-Things-Done-Technical/dp/1590598385
-- https://www.amazon.de/dp/0066620996/ref=asc_df_006662099657912267/?tag=googshopde-21&creative=22398&creativeASIN=0066620996&linkCode=df0&hvadid=310779890634&hvpos=1o1&hvnetw=g&hvrand=10823028277884438276&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1003854&hvtargid=pla-425752468924&th=1&psc=1&tag=&ref=&adgrpid=70301320708&hvpone=&hvptwo=&hvadid=310779890634&hvpos=1o1&hvnetw=g&hvrand=10823028277884438276&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1003854&hvtargid=pla-425752468924 -->
+### Books
+- [DDD: Eric Evans, Domain Drive Design](https://www.oreilly.com/library/view/domain-driven-design-tackling/0321125215/)
+- [Getting Real](https://basecamp.com/books/Getting%20Real.pdf)
+- [Good to Great](https://www.amazon.de/dp/0066620996)
 
 ### Tools
 #### Clipboard history
@@ -163,3 +264,13 @@ Largely based on Joel Spolskys list from [The Guerrilla Guide to Interviewing (v
 - Smart people can explain complicated things in a simple way
 - Have they taken ownership of tasks / problems in the past?
 - If there is any doubt, there is no doubt
+
+### TODO: Topics to cover
+- When brown stuff hits spinning stuff
+    - Plan for accidents
+    - Triage:
+      - Stop the accident
+      - Stop the bleeding
+      - Patch the wound
+    - Post-morten
+- You cannot fix culture with structure
