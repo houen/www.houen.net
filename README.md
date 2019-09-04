@@ -147,5 +147,19 @@ You should hire engineers for, in order of priority:
 1. Raw intelligence
 1. Specific languages / skills (e.g. Java, DevOps, CI/CD experience)
 
+#### Basic interview roadmap
+Largely based on Joel Spolskys list from [The Guerrilla Guide to Interviewing (version 3.0)](https://www.joelonsoftware.com/2006/10/25/the-guerrilla-guide-to-interviewing-version-30/)
+1. Introduction
+1. Question about recent project candidate worked on
+1. Easy Programming Question
+1. Harder Programming Question
+1. Are you satisfied with / How would you improve that code?
+1. Let me tell you about working here
+1. Do you have any questions?
+
 #### Interview process
+- Ask open-ended questions. We are here to learn about the candidate
+- Look for passion in the candidates answers
+- Smart people can explain complicated things in a simple way
+- Have they taken ownership of tasks / problems in the past?
 - If there is any doubt, there is no doubt
