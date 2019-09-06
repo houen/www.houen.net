@@ -18,7 +18,7 @@ Get to the first version with as little effort as possible.
 
 ### Automate first when you absolutely have to
 
-> For tech-based companies, building things without knowing if it is really what your customers need is in my opinion one of the largest contributors to slowing down of development and eventually company death.
+> For tech companies, building things without knowing if it is really what your customers need is in my opinion one of the largest contributors to slowing down of development and eventual company death.
 
 Teams can be heavily slowed down by building the wrong thing. If it takes 5 hours per month to do manually, and 30 hours to automate, *do not automate it*. Wait. Six months from now you will have a much better idea of:
 
@@ -28,17 +28,38 @@ Teams can be heavily slowed down by building the wrong thing. If it takes 5 hour
 
 The longer you wait to build something, the better you understand *what to build* and *how to build it*.
 
+#### The hidden cost of long-tail maintenance
+
+IF something takes 20 hours to build, one might think "ah, we only have to invest a single week". Yes, but this is just the up-front cost. After this comes:
+
+- Maintenance
+- Bug fixes
+- Added code complexity
+- Potential added data model complexity
+- Customer support
+- Onboarding of new developers
+
+These are all small at first, but add up over time. The real killer is the code complexity. The time needed to build new features does not grow linearly. For every feature you add you are increasing the cost of building new features in the future. Every time you decide to add a feature you are choosing to not add a future feature. You can throw more people at it, but more people will also increase the overhead of collaboration and management. With enough people, you will at some point need to split into multiple services. This adds an amazing amount of overhead.
+
+> Every time you decide to add a feature you are choosing to not add a future feature.
+
 #### Example: Building something nobody needs
 
-I once worked in a company where we were tasked with building a highly sophisticated way of automatically generating content on behalf of the customers. There were five or seven different set of rules to follow, and the customers could choose between these. This choice would then seed an algorithm to randomly build personalized content. The content would then auto-grow every month. Everything needed to be customizable by the customer. Later months content would depend on the generated content of previous months .
+I once worked in a company where we were tasked with building a highly sophisticated way of automatically generating content on behalf of the customers. There were five or seven different set of rules to follow, and the customers could choose between these. This choice would then seed an algorithm to build randomized personalized content. The content would then auto-grow every month. Everything needed to be customizable by the customer. Content would depend on the generated content of previous months.
 
-This came straight from the top and was the most important feature ever. At the time I did not know enough to push back properly. Properly in this case being with all possible firmness.
+This came straight from the top and was the most important feature ever. At the time I did not know enough to push back properly. Properly in this case meaning *with all possible firmness*.
 
-It took 3 people two months to build everything related to this. A total of 6 man-months of work. It also seriously complicated the data model.
+It took 3 people two months to build everything related to this. A total of 6 man-months of work. It also severely complicated the data model.
 
-Several years later I briefly worked with the same company again. One of my tasks was removing this feature again. At that point it had been slowing down development for years, and was responsible for much of both the code complexity and the database size. With the time spent removing the feature again, plus the maintenance done in the intermittent years, this single feature cost the company 12-18 months of developer work. And this is not counting the cost the more complicated data model will have had on other features.
+Several years later I briefly worked with the same company again. One of my first tasks was removing this feature again. At that point it had been slowing down development for years.  It was responsible for much of both the code complexity and database size. 
+
+With the time spent removing the feature again, plus the maintenance done in the intermittent years, this single feature cost the company *12-18 months of developer work*. And this is not counting the cost the more complicated data model will have had on slowing down / having to reject other new features.
 
 In the end, the feature was used by under 50 customers. It was something needed by nobody. What the customers turned out to really want was much simpler manually curated content which they could choose from. Something which could have been done in 1-2 weeks.
+
+#### TODO: Kill unneeded features
+
+TODO
 
 ## Collaboration
 
@@ -112,29 +133,41 @@ It is okay to disagree, but we must always be courteous and nice to each other.
 #### Process
 The team members will be giving answers to three questions:
 
-##### Questions
-1. What went well?
-1. What did not go so well?
-1. What can be improved?
+##### What went well?
 
-By starting with "what went well?" We give the team a chance to both think positively and celebrate each other and what worked. This sets a positive frame for the rest of the meeting. In "what did not go so well?" we discuss what went "wrong". We discuss *why* something happened without getting into what can be done about it. In the last question "what can be improved?" we start to try to figure out how we can both fix what was painful as well as improve on what already works.
-
-##### Question process
 1. Everyone writes down at least 3-5 answers
 1. Each team member presents their answers
-1. Answers are grouped
-1. Each team member rates the groupings
-1. The groupings are discussed, starting with highest rated
 
 The coach points to the first question "What went well" and asks the team to write down at least three answers. The team should have at least five minutes for this. 
 
-After the time is up, every team member presents their answers *and why they feel it is important*. Nobody else comments, unless it is to clarify the meaning. 
+After the time is up, every team member presents their answers by putting their post-its on the board one-by-one while explaining them. Nobody else comments, unless it is to clarify the meaning. 
+
+By starting with "what went well?" We give the team a chance to both think positively and celebrate each other and what worked. This sets a positive frame for the rest of the meeting. 
+
+##### What did not go so well?
+
+Here we discuss *why* something happened without getting into what can be done about it. 
+
+1. Everyone writes down at least 3-5 answers
+1. Each team member presents their answers
+1. Answers are grouped
+
+Questions are answered and explained same as with "What went well?".
 
 Once every team member has done this, answers are grouped so common themes emerge where possible: "Deployment issues" and "The servers crashed again" might be grouped together since both are about servers / devops. "User onboarding is a pain to change" and "Automatic email sending is a mess" might also be grouped since both have to do with technical debt.
 
 How to group answers is very dependent on the business domain and specific team issues. The team will make their own sense of this. They are living with this every day.
 
-After answers have been grouped, each team member states what they find important by placing 3-5 dots on one or more groupings. This way the team votes on what is the main issues according to them.
+##### What can be improved?
+
+1. Everyone writes down at least 3-5 answers
+1. Each team member presents their answers
+1. Answers are grouped
+1. Each team member rates the groupings
+
+In the last question "what can be improved?" we start to try to figure out how we can both fix what was painful as well as improve on what already works.
+
+After answers have been written, presented and grouped like above, the team all come up and show what they find important by placing 3-5 dots on one or more groupings. This way the team votes on what should be done first according to them.
 
 Once answers are voted on, they are discussed as time and energy allows, starting with the ones voted most important.
 
@@ -199,6 +232,7 @@ When working on a task, sheperd its ticket through the system. This means adopti
 Many companies use more ticketing "buckets" than Backlog, In progress, and Done, so the above will need to be expanded as fitting. A common Jira column for instance is "To Review" to give Product Owners an overview of the tickets that are "almost done".
 
 #### Reduce WIP
+
 Work-in-progress, or WIP, should be reduced as much as possible. The reason for this is:
 
 - Context switching
@@ -229,6 +263,9 @@ cap-42-add-create-user-post-endpoint
 The benefit here is that anyone looking at the ticket will instantly know pretty much what the branch is called. Even if the branch is for some reason not linked to the ticket properly. And anyone looking at the branch will be able to easily find the ticket by either the cap-42 part or the name.
 
 ### Daily stand-up
+
+> Standups are a place to figure out if more collaboration is needed
+
 Daily standups are a very important tool in the agile workflow. They should be kept very, very short. About one minute per participant. Standups are a place to *figure out if more collaboration is needed*. It is a place where we give a very short overview of our work. This is so other team members can figure out if they need to give input on it.
 
 A good structure is something like the following:
@@ -255,10 +292,6 @@ Then, whoever has a stake in the discussion simply stays behind after standup in
 This should be done any time a discussion is more than five to ten sentences.
 
 ### Sprints
-An important note about sprints:
-
-> The purpose of sprints is to improve our guesswork so plans can be made with higher confidence
-
 The main purpose of a sprint is not to scramble and rush to finish. It is to see how much work was done, so we can estimate how likely our larger deadlines are to hold water. 
 
 I have found that often upper management care more about simply knowing if a project is on track or not. If not, how much is it off?
@@ -281,9 +314,7 @@ Of course it is all guesswork. And that is what sprints are about: Improving our
 This choice depends largely on the level of syncing up required between teams. If three different teams need to finish a single product together, then sprints are probably what you need. If a single team is largely delivering business value independently, you may want to use Kanban instead. Kanban is often a more natural way of working in programming and has much less planning overhead than the sprint structure.
 
 ## Documentation
-Yes, it is a tired trope, but it is still true:
-
-> Any system is only as good as its documentation.
+Yes, it is a tired trope, but it is still true: Any system is only as good as its documentation.
 
 ### Be explicit
 You often see things which are implicitly understood in a system. Things which people are expected to "just know". This is implicit knowledge. Some of it is fine and unavoidable of course. The problem comes when you have too much implicit knowledge. Now it is hindering progress. 
@@ -337,10 +368,6 @@ Personal credit card creation. The system:
 
 There is a lot going on here! It took me all of 5 minutes to write, and anyone who needs to work on anything related to issuing credit card can now easily see the high-level of what should happen when doing so.
 
-
-
-
-
 ## Recommended books
 
 - [DDD: Eric Evans, Domain Drive Design](https://www.oreilly.com/library/view/domain-driven-design-tackling/0321125215/)
@@ -392,3 +419,4 @@ Largely based on Joel Spolskys list from [The Guerrilla Guide to Interviewing (v
       - Patch the wound
     - Post-morten
 - You cannot fix culture with structure
+- Maximum 70% workload so you have capacity to handle the unexpected
