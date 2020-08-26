@@ -1,0 +1,13 @@
+links:
+- title: Home
+  url: /
+- title: About
+  url: /about
+- title: Writing
+  url: /blog
+- title: Work Guide
+  url: /work-guide
+# - title: Search
+#   url: /search
+# - title: Rss
+#   url: /atom.xml
