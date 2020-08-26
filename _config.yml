@@ -12,22 +12,22 @@ title: houen.net
 #   avatar:
 #   email: #youremail
 #   url: #yoururl
-# permalink: pretty
+permalink: pretty
 
-# baseurl: ""
+baseurl: ""
 
-# highlighter: none
+highlighter: none
 
-# exclude:
-#   - .jekyll-cache
+exclude:
+  - .jekyll-cache
   
-# compress_html:
-#   clippings: all
-#   comments: ["<!-- ", " -->"]
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
 
-# sass:
-#   sass_dir:          _sass
-#   style:            :compressed
+sass:
+  sass_dir:          _sass
+  style:            :compressed
 
 plugins:
   - jekyll-paginate
@@ -43,21 +43,21 @@ collections:
     output: true
     permalink: /:year/:month/:day/:slug
   
-# defaults:
-#   -
-#     scope:
-#       path: ""
-#     values:
-#       layout: "default"
-#   -
-#     scope:
-#       path: ""
-#       type: "pages"
-#     values:
-#       layout: "page"
-#   -
-#     scope:
-#       path: ""
-#       type: "posts"
-#     values:
-#       layout: "post"
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
