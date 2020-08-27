@@ -1,4 +1,9 @@
-# Sidey
+# README
+
+## Heroku Deploy
+- https://emmanuelhayford.com/how-to-deploy-jekyll-to-heroku/
+
+## Sidey
 
 Sidey is a simple and minimalistic jekyll blogging theme.
 

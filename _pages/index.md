@@ -3,7 +3,7 @@ layout: page
 title: Søren Houen
 ---
 
-![Photo](photo.jpg)
+![Photo](assets/images/photo.jpg)
 
 Hi! My name is Søren. I am man from Denmark now living in Berlin with my wife and daughter.
 
