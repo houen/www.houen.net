@@ -105,7 +105,7 @@ In the words of [Martin Fowler](https://martinfowler.com/bliki/UbiquitousLanguag
 
 To put it more plainly: 
 
-> A company must always ensure that developers use the same names and words to describe the business concepts as your developers.
+> A company must always ensure that developers use the same names and words to describe the business concepts as your business people.
 
 #### Why is it so important?
 One of my key takeaways from the amazing [DDD book](https://www.oreilly.com/library/view/domain-driven-design-tackling/0321125215/) is that a Ubiquitous Language is one of the most important things to create and maintain in a software company. The reason for this is that without a Ubiquitous Language, developers and business people need to constantly mentally translate terms when communicating with each other. It makes it harder for each side to understand each other. It fosters silos between business and dev. 
@@ -114,8 +114,11 @@ I have worked in companies where there was no Ubiquitous Language. Terms for imp
 
 #### How do you achieve it?
 By making it an explicit requirement. And then doing the work to ensure it happens and stays that way:
+
 - Have a regular work task to make sure Development and Product are still in sync with Business on terms.
+- Business is the one deciding what to name terms. They should be agreed on after proper thought and discussion, and then development should follow this
 - If a term changes in Business or is wrong in Development for whatever reason, change it.
+- Business should not change the terms often. It should be understood that changing terms costs real time and effort for Development. If a term needs to change, it should. But proper care should be taken in choosing terms well.
 - Changing terms used in code should be a separate ticket in its own right. It is important work, not an afterthought.
 
 ### Reviewing pull requests
