@@ -43,17 +43,14 @@ I try to use these as principles to help me do better work.
 
 ### Get to the first production version with as little effort as possible
 
-Right now I may *think* I know what I am doing. However, I really do not. For this reason, I should get to the first version with as little effort as possible. This means I should build the first production version of any project with (in order of importance):
+Right now I may *think* I know what I am doing. However, I really do not. For this reason, I should get to the first version with as little effort as possible. This means I should not waste time on clever code.
+
+Get to the first version with as little effort as possible.
 
 #### As simple code as possible (simple beats DRY)
 Simple code beats clever code - this is doubly true for the first version! Clever code may be easier to extend / adapt, but it is harder to *fundamentally* change. The likelihood is very high that I will have to fundamentally change the first version of any project.
 
-#### As little code as possible
-Right now I may *think* I know what I am doing, but *I really don't*. Therefore I should get to the first version with as little effort as possible. This means I should not waste time on clever code.
-
-Get to the first version with as little effort as possible.
-
-### Automate first when you absolutely have to
+### Automate first when you need to
 
 > For tech companies, building things without knowing if it is really what your customers need is in my opinion one of the largest contributors to slowing down of development and eventual company death.
 
@@ -67,7 +64,7 @@ The longer you wait to build something, the better you understand *what to build
 
 #### The hidden cost of long-tail maintenance
 
-IF something takes 20 hours to build, one might think "ah, we only have to invest a single week". Yes, but this is just the up-front cost. After this comes:
+If something takes 20 hours to build, one might think "ah, we only have to invest a single week". Yes, but this is just the up-front cost. After this comes:
 
 - Maintenance
 - Bug fixes
@@ -84,15 +81,17 @@ These are all small at first, but add up over time. The real killer is the code 
 
 I once worked in a company where we were tasked with building a highly sophisticated way of automatically generating content on behalf of the customers. There were five or seven different set of rules to follow, and the customers could choose between these. This choice would then seed an algorithm to build randomized personalized content. The content would then auto-grow every month. Everything needed to be customizable by the customer. Content would depend on the generated content of previous months.
 
-This came straight from the top and was the most important feature ever. At the time I did not know enough to push back properly. Properly in this case meaning *with all possible firmness*.
+This came straight from the top and was the most important feature ever. At the time I did not know enough to push back properly.
 
-It took 3 people two months to build everything related to this. A total of 6 man-months of work. It also severely complicated the data model.
+It took 3 people two months to build everything related to this. A total of 6 man-months of work. It also *severely* complicated the data model.
 
-Several years later I briefly worked with the same company again. One of my first tasks was removing this feature again. At that point it had been slowing down development for years.  It was responsible for much of both the code complexity and database size. 
+Several years later I briefly worked with the same company again. One of my first tasks was *removing the feature*. At that point it had been slowing down development for years.  It was responsible for much of both the code complexity and database size. 
 
-With the time spent removing the feature again, plus the maintenance done in the intermittent years, this single feature cost the company *12-18 months of developer work*. And this is not counting the cost the more complicated data model will have had on slowing down / having to reject other new features.
+With the time spent removing the feature again, plus the maintenance done in the intermittent years, this single feature cost the company *12-18 months* of developer work. And this is not counting the cost the more complicated data model will have had on slowing down / having to reject other new features.
 
-In the end, the feature was used by under 50 customers. It was something needed by nobody. What the customers turned out to really want was much simpler manually curated content which they could choose from. Something which could have been done in 1-2 weeks.
+In the end, the feature was used by under 50 customers. It was something needed by nobody. What the customers turned out to really want was much simpler manually curated content which they could choose from. 
+
+Something which could have been done in 1-2 weeks.
 
 #### TODO: Kill unneeded features
 
