@@ -121,11 +121,13 @@ By making it an explicit requirement. And then doing the work to ensure it happe
 - Business should not change the terms often. It should be understood that changing terms costs real time and effort for Development. If a term needs to change, it should. But proper care should be taken in choosing terms well.
 - Changing terms used in code should be a separate ticket in its own right. It is important work, not an afterthought.
 
-### Reviewing pull requests
-#### Always be polite and friendly
+### Pull Requests
+
+#### Reviewing pull requests
+##### Always be polite and friendly
 A pull request is a place for friendly collaboration. It is not a battleground. Always be nice and friendly to each other.
 
-#### Misunderstandings can very easily happen
+##### Misunderstandings can very easily happen
 Remember, it is very easy for misunderstandings to happen over a text-based medium. Something you write in a slightly annoyed tone might be read as a fiery insult by the receiver. Just dont do it.
 
 Strong disagreements happen. It is best to solve these face-to-face, else over the phone, or lastly via synchronous chat. 
