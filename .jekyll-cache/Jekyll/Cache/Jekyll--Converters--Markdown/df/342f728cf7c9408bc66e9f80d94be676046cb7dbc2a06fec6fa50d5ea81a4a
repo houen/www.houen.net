@@ -1,0 +1,560 @@
+I"�z<!-- https://guides.github.com/features/mastering-markdown/ -->
+<p>This is a collection of thoughts and ideas I have had or come across while working in software engineering and startups.</p>
+
+<p>I try to use these as principles to help me do better work.</p>
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<p><strong>Table of Contents</strong></p>
+
+<ul>
+  <li><a href="#coding">Coding</a>
+    <ul>
+      <li><a href="#get-to-the-first-production-version-with-as-little-effort-as-possible">Get to the first production version with as little effort as possible</a></li>
+      <li><a href="#automate-first-when-you-absolutely-have-to">Automate first when you absolutely have to</a></li>
+    </ul>
+  </li>
+  <li><a href="#collaboration">Collaboration</a>
+    <ul>
+      <li><a href="#ubiquitous-language">Ubiquitous language</a></li>
+      <li><a href="#reviewing-pull-requests">Reviewing pull requests</a></li>
+    </ul>
+  </li>
+  <li><a href="#agile">Agile</a>
+    <ul>
+      <li><a href="#regular-retrospectives">Regular retrospectives</a></li>
+      <li><a href="#ticketing-system">Ticketing system</a></li>
+      <li><a href="#daily-stand-up">Daily stand-up</a></li>
+      <li><a href="#sprints">Sprints</a></li>
+      <li><a href="#kanban-or-sprints">Kanban or Sprints</a></li>
+    </ul>
+  </li>
+  <li><a href="#documentation">Documentation</a>
+    <ul>
+      <li><a href="#be-explicit">Be explicit</a></li>
+      <li><a href="#be-concise">Be concise</a></li>
+      <li><a href="#have-a-simple-high-level-source-of-truth">Have a simple high-level source of truth</a></li>
+    </ul>
+  </li>
+  <li><a href="#recommended-books">Recommended books</a></li>
+  <li><a href="#tools">Tools</a>
+    <ul>
+      <li><a href="#clipboard-history">Clipboard history</a></li>
+    </ul>
+  </li>
+  <li><a href="#hiring">Hiring</a>
+    <ul>
+      <li><a href="#getting-the-right-people-on-the-bus">Getting the right people on the bus</a></li>
+      <li><a href="#basic-interview-roadmap">Basic interview roadmap</a></li>
+      <li><a href="#interview-process">Interview process</a></li>
+    </ul>
+  </li>
+  <li><a href="#todo-topics-to-cover">TODO: Topics to cover</a></li>
+</ul>
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+<h2 id="coding">Coding</h2>
+
+<h3 id="get-to-the-first-production-version-with-as-little-effort-as-possible">Get to the first production version with as little effort as possible</h3>
+
+<p>Right now I may <em>think</em> I know what I am doing. However, I really do not. For this reason, I should get to the first version with as little effort as possible. This means I should build the first production version of any project with (in order of importance):</p>
+
+<h4 id="as-simple-code-as-possible-simple-beats-dry">As simple code as possible (simple beats DRY)</h4>
+<p>Simple code beats clever code - this is doubly true for the first version! Clever code may be easier to extend / adapt, but it is harder to <em>fundamentally</em> change. The likelihood is very high that I will have to fundamentally change the first version of any project.</p>
+
+<h4 id="as-little-code-as-possible">As little code as possible</h4>
+<p>Right now I may <em>think</em> I know what I am doing, but <em>I really don’t</em>. Therefore I should get to the first version with as little effort as possible. This means I should not waste time on clever code.</p>
+
+<p>Get to the first version with as little effort as possible.</p>
+
+<h3 id="automate-first-when-you-absolutely-have-to">Automate first when you absolutely have to</h3>
+
+<blockquote>
+  <p>For tech companies, building things without knowing if it is really what your customers need is in my opinion one of the largest contributors to slowing down of development and eventual company death.</p>
+</blockquote>
+
+<p>Teams can be heavily slowed down by building the wrong thing. If it takes 5 hours per month to do manually, and 30 hours to automate, <em>do not automate it</em>. Wait. Six months from now you will have a much better idea of:</p>
+
+<ul>
+  <li>What is really the customer need?</li>
+  <li>What is the simplest way to fulfil that need with code?</li>
+  <li>How much value will this really bring?</li>
+</ul>
+
+<p>The longer you wait to build something, the better you understand <em>what to build</em> and <em>how to build it</em>.</p>
+
+<h4 id="the-hidden-cost-of-long-tail-maintenance">The hidden cost of long-tail maintenance</h4>
+
+<p>IF something takes 20 hours to build, one might think “ah, we only have to invest a single week”. Yes, but this is just the up-front cost. After this comes:</p>
+
+<ul>
+  <li>Maintenance</li>
+  <li>Bug fixes</li>
+  <li>Added code complexity</li>
+  <li>Potential added data model complexity</li>
+  <li>Customer support</li>
+  <li>Onboarding of new developers</li>
+</ul>
+
+<p>These are all small at first, but add up over time. The real killer is the code complexity. The time needed to build new features does not grow linearly. For every feature you add you are increasing the cost of building new features in the future. Every time you decide to add a feature you are choosing to not add a future feature. You can throw more people at it, but more people will also increase the overhead of collaboration and management. With enough people, you will at some point need to split into multiple services. This adds an amazing amount of overhead.</p>
+
+<blockquote>
+  <p>Every time you decide to add a feature you are choosing to not add a future feature.</p>
+</blockquote>
+
+<h4 id="example-building-something-nobody-needs">Example: Building something nobody needs</h4>
+
+<p>I once worked in a company where we were tasked with building a highly sophisticated way of automatically generating content on behalf of the customers. There were five or seven different set of rules to follow, and the customers could choose between these. This choice would then seed an algorithm to build randomized personalized content. The content would then auto-grow every month. Everything needed to be customizable by the customer. Content would depend on the generated content of previous months.</p>
+
+<p>This came straight from the top and was the most important feature ever. At the time I did not know enough to push back properly. Properly in this case meaning <em>with all possible firmness</em>.</p>
+
+<p>It took 3 people two months to build everything related to this. A total of 6 man-months of work. It also severely complicated the data model.</p>
+
+<p>Several years later I briefly worked with the same company again. One of my first tasks was removing this feature again. At that point it had been slowing down development for years.  It was responsible for much of both the code complexity and database size.</p>
+
+<p>With the time spent removing the feature again, plus the maintenance done in the intermittent years, this single feature cost the company <em>12-18 months of developer work</em>. And this is not counting the cost the more complicated data model will have had on slowing down / having to reject other new features.</p>
+
+<p>In the end, the feature was used by under 50 customers. It was something needed by nobody. What the customers turned out to really want was much simpler manually curated content which they could choose from. Something which could have been done in 1-2 weeks.</p>
+
+<h4 id="todo-kill-unneeded-features">TODO: Kill unneeded features</h4>
+
+<p>TODO</p>
+
+<h2 id="collaboration">Collaboration</h2>
+
+<h3 id="ubiquitous-language">Ubiquitous language</h3>
+<h4 id="what-is-it">What is it?</h4>
+<p>In the words of <a href="https://martinfowler.com/bliki/UbiquitousLanguage.html">Martin Fowler</a>: “the practice of building up a common, rigorous language between developers and users”.</p>
+
+<p>To put it more plainly:</p>
+
+<blockquote>
+  <p>A company must always ensure that developers use the same names and words to describe the business concepts as your developers.</p>
+</blockquote>
+
+<h4 id="why-is-it-so-important">Why is it so important?</h4>
+<p>One of my key takeaways from the amazing <a href="https://www.oreilly.com/library/view/domain-driven-design-tackling/0321125215/">DDD book</a> is that a Ubiquitous Language is one of the most important things to create and maintain in a software company. The reason for this is that without a Ubiquitous Language, developers and business people need to constantly mentally translate terms when communicating with each other. It makes it harder for each side to understand each other. It fosters silos between business and dev.</p>
+
+<p>I have worked in companies where there was no Ubiquitous Language. Terms for important domain concepts had drifted twice between business and dev. “Campaign” in code meant either “Project” or “Advertisement” when talking to business. It confused everybody: Leadership, Sales, Product, and Development. It was the largest source of confusion for new developers. And because it had not been handled from the start, it was now a monumental effort to fix in code.</p>
+
+<h4 id="how-do-you-achieve-it">How do you achieve it?</h4>
+<p>By making it an explicit requirement. And then doing the work to ensure it happens and stays that way:</p>
+<ul>
+  <li>Have a regular work task to make sure Development and Product are still in sync with Business on terms.</li>
+  <li>If a term changes in Business or is wrong in Development for whatever reason, change it.</li>
+  <li>Changing terms used in code should be a separate ticket in its own right. It is important work, not an afterthought.</li>
+</ul>
+
+<h3 id="reviewing-pull-requests">Reviewing pull requests</h3>
+<h4 id="always-be-polite-and-friendly">Always be polite and friendly</h4>
+<p>A pull request is a place for friendly collaboration. It is not a battleground. Always be nice and friendly to each other.</p>
+
+<h4 id="misunderstandings-can-very-easily-happen">Misunderstandings can very easily happen</h4>
+<p>Remember, it is very easy for misunderstandings to happen over a text-based medium. Something you write in a slightly annoyed tone might be read as a fiery insult by the receiver. Just dont do it.</p>
+
+<p>Strong disagreements happen. It is best to solve these face-to-face, else over the phone, or lastly via synchronous chat.</p>
+
+<p>Come to the best agreement you can. Then respectfully describe the different viewpoints and what the outcome of the discussion was.</p>
+
+<p>Jokes are of course okay, but should be used with caution. This is also because of the risk of misunderstandings.</p>
+
+<h2 id="agile">Agile</h2>
+<p>Agile is such an integral part of our work life today that it deserves its own section.</p>
+
+<h3 id="regular-retrospectives">Regular retrospectives</h3>
+<p>Retrospectives are in my opinion the most important part of Agile.</p>
+
+<p>Retrospectives is the time we take to not just work but <em>improve how we work</em>. If your team was a saw, retrospectives is the time you take to sharpen that saw.</p>
+
+<p>Retrospectives should be held once every sprint or every two weeks. This fits with most sprint schedules, either every halfway or at sprint end.</p>
+
+<p>Even if your team uses none of the other parts of Agile, adopt regular retrospectives.</p>
+
+<h4 id="main-purposes">Main purposes</h4>
+<ul>
+  <li>Improve team collaboration</li>
+  <li>Remove team roadblocks</li>
+  <li>Having a space to bring up issues which need to be brought higher up the chain</li>
+  <li>Letting team members vent their issues</li>
+  <li>Celebrate successes</li>
+  <li>Practive gratitude
+    <ul>
+      <li>A proven way to increase happines, which is a proven way to increase productivity</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="attendees">Attendees</h4>
+<ul>
+  <li>The entire team, both developers, product owners and direct manager if there is one</li>
+  <li>A retrospective coach</li>
+</ul>
+
+<p>Note: For this section I will assume a team size of maximum six people. If more people, you will need to adjust as needed.</p>
+
+<h4 id="tools">Tools</h4>
+<ul>
+  <li>A big board or wall</li>
+  <li>Lots of post-its</li>
+  <li>Semi-fat permanent markers</li>
+</ul>
+
+<h4 id="rules">Rules</h4>
+<p>It is okay to disagree, but we must always be courteous and nice to each other.</p>
+
+<h4 id="process">Process</h4>
+<p>The team members will be giving answers to three questions:</p>
+
+<h5 id="what-went-well">What went well?</h5>
+
+<ol>
+  <li>Everyone writes down at least 3-5 answers</li>
+  <li>Each team member presents their answers</li>
+</ol>
+
+<p>The coach points to the first question “What went well” and asks the team to write down at least three answers. The team should have at least five minutes for this.</p>
+
+<p>After the time is up, every team member presents their answers by putting their post-its on the board one-by-one while explaining them. Nobody else comments, unless it is to clarify the meaning.</p>
+
+<p>By starting with “what went well?” We give the team a chance to both think positively and celebrate each other and what worked. This sets a positive frame for the rest of the meeting.</p>
+
+<h5 id="what-did-not-go-so-well">What did not go so well?</h5>
+
+<p>Here we discuss <em>why</em> something happened without getting into what can be done about it.</p>
+
+<ol>
+  <li>Everyone writes down at least 3-5 answers</li>
+  <li>Each team member presents their answers</li>
+  <li>Answers are grouped</li>
+</ol>
+
+<p>Questions are answered and explained same as with “What went well?”.</p>
+
+<p>Once every team member has done this, answers are grouped so common themes emerge where possible: “Deployment issues” and “The servers crashed again” might be grouped together since both are about servers / devops. “User onboarding is a pain to change” and “Automatic email sending is a mess” might also be grouped since both have to do with technical debt.</p>
+
+<p>How to group answers is very dependent on the business domain and specific team issues. The team will make their own sense of this. They are living with this every day.</p>
+
+<h5 id="what-can-be-improved">What can be improved?</h5>
+
+<ol>
+  <li>Everyone writes down at least 3-5 answers</li>
+  <li>Each team member presents their answers</li>
+  <li>Answers are grouped</li>
+  <li>Each team member rates the groupings</li>
+</ol>
+
+<p>In the last question “what can be improved?” we start to try to figure out how we can both fix what was painful as well as improve on what already works.</p>
+
+<p>After answers have been written, presented and grouped like above, the team all come up and show what they find important by placing 3-5 dots on one or more groupings. This way the team votes on what should be done first according to them.</p>
+
+<p>Once answers are voted on, they are discussed as time and energy allows, starting with the ones voted most important.</p>
+
+<h5 id="examples">Examples</h5>
+
+<p>Here are a couple of examples which are close to what I have experienced in real life retrospectives. The team once again failed to deliver the Sprint, and everyone seem a bit frustrated.</p>
+
+<p><strong>What went well</strong></p>
+
+<ul>
+  <li>Coach: “What went well this Sprint. John do you want to start?”</li>
+  <li>John: “I was working with the new domain model structure Jane set up for the billing flow. It was a pleasure to code on.”
+    <ul>
+      <li>[2 more things from John]</li>
+    </ul>
+  </li>
+  <li>Jane: “I thought the tickets coming from Fred were very high-quality this sprint. Thanks Fred”
+    <ul>
+      <li>[3 more things from Jane]</li>
+    </ul>
+  </li>
+  <li>Fred: “I tried out the Who/Why/What framework for writing tickets as well as Gherkin. It worked better than I had thought. I might start doing it for all tickets”
+    <ul>
+      <li>[4 more things from Fred]</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>What did not go so well?</strong></p>
+
+<ul>
+  <li>Coach: “Ok, so what did not go so well? Jane, I see you have a lot on your mind this time?”</li>
+  <li>Fred: “We delivered late again this sprint. I know it probably has to do with the legacy code from how much you mentioned it the last couple of times”
+    <ul>
+      <li>[4 more things from Fred]</li>
+    </ul>
+  </li>
+  <li>Jane: “I had to touch the legacy code parts from the previous system. It took forever and was full of bugs. I hate that thing”
+    <ul>
+      <li>[5 more things from Jane]</li>
+    </ul>
+  </li>
+  <li>John: “Yeah about the legacy code. I had to fix a bug with it as well. It took 2 whole days”
+    <ul>
+      <li>[2 more things from John]</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>What can be improved?</strong></p>
+
+<ul>
+  <li>
+    <p>Coach: “Okay, it seems like the grouping with the most points by far is the legacy code. Who wants to start?”</p>
+  </li>
+  <li>
+    <p>Fred: “I wrote the legacy code. We keep getting slowed down by. it, and I think we have the time right now to do something about it.”</p>
+  </li>
+  <li>
+    <p>John: “Yeah, I had legacy code as well. Jane, I think you did too, right?”</p>
+  </li>
+  <li>
+    <p>Jane: “Yes. I think most of the pain we are having with it is due to modules A and B. We barely touch anything else in the legacy.</p>
+
+    <p>The main issue for me is that the tests on those are so bad. Maybe we can write a couple of integration tests for just those modules and then try to extract them into smaller units?”</p>
+  </li>
+  <li>
+    <p>John: “Yeah, that could work. We could start with A1, A2 and B1”</p>
+  </li>
+  <li>
+    <p>Fred: “Ok. Then to get rid of this how about we change the time allocation from the normal 60%/40% to 20% product, 80% tech tasks this upcoming sprint?”</p>
+
+    <p>[John and Jane of course agree to get more time to clean up the painful code, whereafter they move on to discuss the next-most important things to improve, etc. etc.]</p>
+  </li>
+</ul>
+
+<h3 id="ticketing-system">Ticketing system</h3>
+<p>Most companies use some form of ticketing system: Jira, Trello, Github, Gitlab or another.</p>
+
+<h4 id="work-in-a-ticket-first-manner">Work in a ticket-first manner</h4>
+<p>When working on a task, sheperd its ticket through the system. This means adopting some version of the following:</p>
+
+<ul>
+  <li>Move the ticket from “backlog” to “in progress”</li>
+  <li>Then open a git branch</li>
+  <li>Work the ticket</li>
+  <li>Open a pull request, get it reviewed, merge the code</li>
+  <li>Now move the ticket to done.</li>
+</ul>
+
+<p>Many companies use more ticketing “buckets” than Backlog, In progress, and Done, so the above will need to be expanded as fitting. A common Jira column for instance is “To Review” to give Product Owners an overview of the tickets that are “almost done”.</p>
+
+<h4 id="reduce-wip">Reduce WIP</h4>
+
+<p>Work-in-progress, or WIP, should be reduced as much as possible. The reason for this is:</p>
+
+<ul>
+  <li>Context switching</li>
+  <li>Collaboration overhead</li>
+  <li>Planning overhead</li>
+</ul>
+
+<p>The context switching is by far the worst culprit of the above. Whenever a developer is working on more than one task at a time, they need to spend a non-trivial amount of time wrapping their head around both the business domain, the change we are trying to do with the code, as well as the code itself. In complex domains, changes or code, this can amount to a massive amount of overhead and time wasted. Don’t do it. If at all possible, work on one thing at a time.</p>
+
+<h4 id="create-topical-git-branches">Create topical git branches</h4>
+<p>Create a single git branch per ticket. Work on that single branch. Sometimes a branch cannot or should not be merged into master by itself. In this case, create a pull request to a larger “epic” branch and merge into that. Then when the Epic branch is ready to merge to master create a pull request to do so.</p>
+
+<h4 id="adopt-a-rigid-structure-for-branch-naming">Adopt a rigid structure for branch naming</h4>
+<p>The main reason for both git and ticketing systems is collaboration. To simplify this, adopt some form of rigid structure for naming branches. This way, anyone can more easily find a branch for a ticket and a ticket for a branch. I normally use some form of the following:</p>
+
+<pre><code># Structure
+[board_or_project_key]-[ticket_number]-short-desription-for-clarity
+</code></pre>
+
+<p>Keep the board_or_project_key short so it is not a pain to write all the time. For instance, for Jira you often have a team board, and it makes sense to use a short version of the team name.</p>
+
+<p>For example, for the CAP team and ticket number 42 with the title “Add create user POST endpoint”:</p>
+
+<pre><code>cap-42-add-create-user-post-endpoint
+</code></pre>
+
+<p>The benefit here is that anyone looking at the ticket will instantly know pretty much what the branch is called. Even if the branch is for some reason not linked to the ticket properly. And anyone looking at the branch will be able to easily find the ticket by either the cap-42 part or the name.</p>
+
+<h3 id="daily-stand-up">Daily stand-up</h3>
+
+<blockquote>
+  <p>Standups are a place to figure out if more collaboration is needed</p>
+</blockquote>
+
+<p>Daily standups are a very important tool in the agile workflow. They should be kept very, very short. About one minute per participant. Standups are a place to <em>figure out if more collaboration is needed</em>. It is a place where we give a very short overview of our work. This is so other team members can figure out if they need to give input on it.</p>
+
+<p>A good structure is something like the following:</p>
+
+<ul>
+  <li>What did I do yesterday?</li>
+  <li>What have / will I do today?</li>
+  <li>Is anything blocking me?</li>
+</ul>
+
+<h4 id="guarding-against-long-stand-up-discussions">Guarding against long stand-up discussions</h4>
+<p>Often discussions come up at stand-up. This is exactly because they are about collaboration. Most of the time this is simply something like the following:</p>
+<ul>
+  <li>“I did X”, “Oh nice, does this mean Y”, “Yes it does”.</li>
+  <li>“I am blocked by X”, “Oh, I think you should look at Y”, “Nah, I already tried that, didnt work”, “Ok, maybe I come by later”</li>
+</ul>
+
+<p>The problem is when two people disagree about something important to them:</p>
+
+<ul>
+  <li>“I think we should do X”, “I think Y is better” or “I agree, but we should be X2 instead”</li>
+</ul>
+
+<p>Then you can have a very long and heated discussion during standup.</p>
+
+<p>To alleviate this problem, simply adopt the rule that it is always acceptable to ask “<em>hey, can we take this after standup?</em>”.</p>
+
+<p>Then, whoever has a stake in the discussion simply stays behind after standup in order to finish what they were talking about.</p>
+
+<p>This should be done any time a discussion is more than five to ten sentences.</p>
+
+<h3 id="sprints">Sprints</h3>
+<p>The main purpose of a sprint is not to scramble and rush to finish. It is to see how much work was done, so we can estimate how likely our larger deadlines are to hold water.</p>
+
+<p>I have found that often upper management care more about simply knowing if a project is on track or not. If not, how much is it off?</p>
+
+<p>This way we are less likely to find big scary monsters in the closet three months / one year in. We need to find those bad boys as early as possible.</p>
+
+<p>This:</p>
+
+<p>“Based on Sprint performance in sprints one to six, we are expecting to be one month delayed total compared to original estimates.”</p>
+
+<p>Is better than:</p>
+
+<p>“We are behind on sprint six of sixteen by [no idea] but we are working overtime to catch up”</p>
+
+<p>With the second message, we have no idea how the next sprints will look or how much the project will be delayed total. Worse, we are risking burnout and much larger delays by trying to “catch up”.</p>
+
+<p>Of course it is all guesswork. And that is what sprints are about: Improving our guesswork so plans can be made with higher confidence.</p>
+
+<h3 id="kanban-or-sprints">Kanban or Sprints</h3>
+<p>This choice depends largely on the level of syncing up required between teams. If three different teams need to finish a single product together, then sprints are probably what you need. If a single team is largely delivering business value independently, you may want to use Kanban instead. Kanban is often a more natural way of working in programming and has much less planning overhead than the sprint structure.</p>
+
+<h2 id="documentation">Documentation</h2>
+<p>Yes, it is a tired trope, but it is still true: Any system is only as good as its documentation.</p>
+
+<h3 id="be-explicit">Be explicit</h3>
+<p>You often see things which are implicitly understood in a system. Things which people are expected to “just know”. This is implicit knowledge. Some of it is fine and unavoidable of course. The problem comes when you have too much implicit knowledge. Now it is hindering progress.</p>
+
+<p>Too much implicit knowledge has two dangers:</p>
+<ul>
+  <li>Knowledge is forgotten / leaves the company and takes a long time to recover / reverse engineer</li>
+  <li>Developers and users need to keep this knowledge in their head all the time while working. This leaves less room for thoughts about progress.</li>
+</ul>
+
+<h3 id="be-concise">Be concise</h3>
+<!-- ### Documenting architecture decisions
+http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions -->
+
+<h3 id="have-a-simple-high-level-source-of-truth">Have a simple high-level source of truth</h3>
+
+<blockquote>
+  <p>The code should not be the only source of truth</p>
+</blockquote>
+
+<p>Often in companies you see that there is not “source of truth” except from the code. Jira tickets are written for each Sprint, and then left to rot and grow obscure. The code is considered the source of truth. When a new developer asks “how should X work” the answer is “check the code”.</p>
+
+<p>This works ok-<em>ish</em> most of the time. Everything the developers do takes longer than it has to because they have to talk to three different people and come back to ask “what about this edge case” because nobody had thought about it.</p>
+
+<p>But then someone discovers a bug in the code. They suspect that flow A is not correct because they are getting weird errors downstream from it in flow B. Flow A was created three years ago and nobody working on it now works in the company anymore. It is a mess of indirection and it is a bit hard to see everything it is supposed to do.</p>
+
+<p>In cases of doubt like these as to how something works, they now have to read through 10+ files of source code, as well as dig up ancient Jira tickets to find out how things should work. Since it is hard to figure out <em>how it should work</em>, not how to code it, this takes up everyones time: All three senior developers, as well as the product owner and two business people end up getting involved at some point. Everyone now has to context switch and spend time they should be using moving forward, on looking back.</p>
+
+<p>When you are working and evolving a mature system, it pays to keep a very simple source of truth on how things should work. The added clarity for everyone involved is worth the investment.</p>
+
+<h4 id="example-adding-a-new-credit-card">Example: Adding a new credit card</h4>
+
+<p>Here is a fictional example of a bank issuing a credit card for a user.</p>
+
+<pre><code>Creating a new personal credit card for a user.
+Note: There are two types of credit card which can be created: Personal and Business.
+
+Personal credit card creation. The system:
+- Ensures that user is over 18 years old
+- Ensures that user has passed KYC
+- Ensures that no danger flags are set on users account
+- Ensures user has entered full name
+- Ensures user has entered full address so we can send card
+- Ensures that user has positive account balance
+- Converts users name to ISO-XYZ standard for printing
+- Creates credit card record in system. Card is marked "PENDING_ISSUANCE"
+- Sends request to card issuer to issue card
+- If card issuer responds positive:
+	- Card is marked "PENDING_ACTIVATION"
+- If card issuer responds negative:
+	- Card is marked "ISSUANCE_ERROR"
+	- Notice is sent to cards business section to look into it
+</code></pre>
+
+<p>There is a lot going on here! It took me all of 5 minutes to write, and anyone who needs to work on anything related to issuing credit card can now easily see the high-level of what should happen when doing so.</p>
+
+<h2 id="recommended-books">Recommended books</h2>
+
+<ul>
+  <li><a href="https://www.oreilly.com/library/view/domain-driven-design-tackling/0321125215/">DDD: Eric Evans, Domain Drive Design</a></li>
+  <li><a href="https://basecamp.com/books/Getting%20Real.pdf">Getting Real</a></li>
+  <li><a href="https://www.amazon.de/dp/0066620996">Good to Great</a></li>
+</ul>
+
+<h2 id="tools-1">Tools</h2>
+<h3 id="clipboard-history">Clipboard history</h3>
+<blockquote>
+  <p>Use a clipboard history manager. Even if you think you do not need it. Try it out for two weeks.</p>
+</blockquote>
+
+<p>I originally stumbled upon the advice of using a clipboard history manager <a href="https://lifehacker.com/5950386/im-jeff-atwood-founder-of-stack-exchange-and-this-is-how-i-work">from an interview with Jeff Atwood</a>, the founder of Stack Overflow.</p>
+
+<p>I had never used a Clipboard history app before. Now, 3 years later, I would not want to code without it.</p>
+
+<p>The best one (as far as I know) for OSX is <a href="https://www.alfredapp.com/">Alfred with the Powerpack addon</a>.</p>
+
+<h2 id="hiring">Hiring</h2>
+<h3 id="getting-the-right-people-on-the-bus">Getting the right people on the bus</h3>
+<p>You should hire engineers for, in order of priority:</p>
+
+<ol>
+  <li>Cultural fit</li>
+  <li>Work Ethics / Gets shit done</li>
+  <li>Raw intelligence</li>
+  <li>Specific languages / skills (e.g. Java, DevOps, CI/CD experience)</li>
+</ol>
+
+<h3 id="basic-interview-roadmap">Basic interview roadmap</h3>
+<p>Largely based on Joel Spolskys list from <a href="https://www.joelonsoftware.com/2006/10/25/the-guerrilla-guide-to-interviewing-version-30/">The Guerrilla Guide to Interviewing (version 3.0)</a></p>
+<ol>
+  <li>Introduction</li>
+  <li>Question about recent project candidate worked on</li>
+  <li>Easy Programming Question</li>
+  <li>Harder Programming Question</li>
+  <li>Are you satisfied with / How would you improve that code?</li>
+  <li>Let me tell you about working here</li>
+  <li>Do you have any questions?</li>
+</ol>
+
+<h3 id="interview-process">Interview process</h3>
+<ul>
+  <li>Ask open-ended questions. We are here to learn about the candidate</li>
+  <li>Look for passion in the candidates answers</li>
+  <li>Smart people can explain complicated things in a simple way</li>
+  <li>Have they taken ownership of tasks / problems in the past?</li>
+  <li>If there is any doubt, there is no doubt</li>
+</ul>
+
+<h2 id="todo-topics-to-cover">TODO: Topics to cover</h2>
+<ul>
+  <li>When brown stuff hits spinning stuff
+    <ul>
+      <li>Plan for accidents</li>
+      <li>Triage:
+        <ul>
+          <li>Stop the accident</li>
+          <li>Stop the bleeding</li>
+          <li>Patch the wound</li>
+        </ul>
+      </li>
+      <li>Post-morten</li>
+    </ul>
+  </li>
+  <li>You cannot fix culture with structure</li>
+  <li>Maximum 70% workload so you have capacity to handle the unexpected</li>
+</ul>
+:ET
