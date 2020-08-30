@@ -14,10 +14,13 @@ I try to use these as principles to help me do better work.
 
 - [Coding](#coding)
   - [Get to the first production version with as little effort as possible](#get-to-the-first-production-version-with-as-little-effort-as-possible)
-  - [Automate first when you absolutely have to](#automate-first-when-you-absolutely-have-to)
+- [Product](#product)
+  - [Automate first when you need to](#automate-first-when-you-need-to)
+  - [The cost of features](#the-cost-of-features)
+  - [Track feature value](#track-feature-value)
 - [Collaboration](#collaboration)
   - [Ubiquitous language](#ubiquitous-language)
-  - [Reviewing pull requests](#reviewing-pull-requests)
+  - [Pull Requests / Merge Requests](#pull-requests--merge-requests)
 - [Agile](#agile)
   - [Regular retrospectives](#regular-retrospectives)
   - [Ticketing system](#ticketing-system)
@@ -28,7 +31,6 @@ I try to use these as principles to help me do better work.
   - [Be explicit](#be-explicit)
   - [Be concise](#be-concise)
   - [Have a simple high-level source of truth](#have-a-simple-high-level-source-of-truth)
-- [Recommended books](#recommended-books)
 - [Tools](#tools)
   - [Clipboard history](#clipboard-history)
 - [Hiring](#hiring)
@@ -38,6 +40,7 @@ I try to use these as principles to help me do better work.
 - [TODO: Topics to cover](#todo-topics-to-cover)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 
 ## Coding
 
@@ -49,6 +52,9 @@ Get to the first version with as little effort as possible.
 
 #### As simple code as possible (simple beats DRY)
 Simple code beats clever code - this is doubly true for the first version! Clever code may be easier to extend / adapt, but it is harder to *fundamentally* change. The likelihood is very high that I will have to fundamentally change the first version of any project.
+
+
+## Product
 
 ### Automate first when you need to
 
@@ -62,9 +68,8 @@ Teams can be heavily slowed down by building the wrong thing. If it takes 5 hour
 
 The longer you wait to build something, the better you understand *what to build* and *how to build it*.
 
-#### The hidden cost of long-tail maintenance
-
-If something takes 20 hours to build, one might think "ah, we only have to invest a single week". Yes, but this is just the up-front cost. After this comes:
+### The cost of features
+The cost of developing feature is not as simple as just building it. If something takes 20 hours to build, one might think "ah, we only have to invest a single week". Yes, but this is just the up-front cost. After this comes:
 
 - Maintenance
 - Bug fixes
@@ -73,7 +78,30 @@ If something takes 20 hours to build, one might think "ah, we only have to inves
 - Customer support
 - Onboarding of new developers
 
-These are all small at first, but add up over time. The real killer is the code complexity. The time needed to build new features does not grow linearly. For every feature you add you are increasing the cost of building new features in the future. Every time you decide to add a feature you are choosing to not add a future feature. You can throw more people at it, but more people will also increase the overhead of collaboration and management. With enough people, you will at some point need to split into multiple services. This adds an amazing amount of overhead.
+These are all small at first, but add up over time. The real killer is the code complexity. The time needed to build new features does not grow linearly. For every feature you add you are increasing the cost of: 
+
+- Building new features in the future. 
+- Maintaining existing features.
+
+Every time you decide to add a feature you are choosing to not add a future feature. You can throw more engineers at it, but this will also increase the overhead of collaboration and management. With enough people, you will at some point need to split into multiple services. This adds an amazing amount of overhead. For more on this, see [The mythical man-month](#books).
+
+And the above is only considering the engineering cost. It gets worse when we looks at the big picture:
+
+#### How much does a feature cost?
+Of course this varies. But we can try to get a feel for it by looking at the people involved. For each feature, the company will be paying:
+
+- The Product Owner for designing the feature
+- The product team for discussing the feature
+- The development team for discussing the feature
+- The assigned engineers for building the feature
+- QA or the assigned engineers for testing the feature
+- The Product Owner for evaluating and signing off on the development work.
+- The product team for discussing how the finished feature works and performs
+- The customer support team for supporting the feature
+- The development team for fixing bugs related to the feature
+- The development team for *incorporating the feature code into all new development work*.
+
+There are a *lot* of people involved in building each feature! And this is how it looks like in most medium-to-large software companies following Agile principles.
 
 > Every time you decide to add a feature you are choosing to not add a future feature.
 
@@ -93,9 +121,45 @@ In the end, the feature was used by under 50 customers. It was something needed 
 
 Something which could have been done in 1-2 weeks.
 
-#### TODO: Kill unneeded features
+### Track feature value
+From the hidden cost of long-tail maintenance we see the cost of maintaining a feature in your product. We know a feature costs money, and the more features you build, the more each feature costs. This relationship is worse than linear.
 
-TODO
+Because of this it is important to track the performance of your features. By doing this we can remove those that do not perform.  
+
+To track performance, first we must try to quantify how much true business value a feature is bringing in.
+Did you change the way the signup process works - how did that affect drop-off rate during signups?
+
+The best way to get data on which features are performing is with raw analytics data. So a feature introduced a new *call-to-action* (CTA) button on a page. How is that new button converting? Do not simply look at the raw click-through rate. Here are some suggestions:
+
+- What percent of visitors to the page click the new button?
+- How many people convert via the new button, and what is their *customer lifetime value*?
+- Start a funnel from this new CTA button, and see how it performs. How many people drop off in the funnel? Do they come back? How does this compare with the other funnels? Would it be better to let the customer explore the page longer before showing them a CTA button?
+
+#### Tracking non-trackable features
+Sometimes, there is no simple or hard-and-fast way to measure a features performance. But we must still make an effort to try. At least make it a regular topic in the regular product meetings. 
+
+Just opening a conversation around "how is feature x, y and z performing? *And how do we know they are performing this way*" will improve your product pipeline. The last part is very important. 
+
+It is not enough that someone simply states that something is performing wonderfully. These are likely the same people who pitched the feature in the first place. They put their ass on the line to make this happen. Of course they are going to stand up for their work. We need to understand *how* we know that something is performing.
+
+We prefer data. Sometimes we don't have that. We only have feelings and anecdotes. At the very least we need to know how we arrived at a feeling concerning a feature.
+
+#### Celebrate process and honesty, not just results
+Some companies punish people when they are wrong. Either overtly or with company culture. This can be something as small as a snarky comment in meetings. Either by the manager, or allowed by the manager.
+
+When you force your people to try to defend broken features because their reputation and eventually their job may be on the line, you run the risk of keeping bad features in your product. 
+
+This means you are not letting better features in. This means you are paying good money for bad features.
+
+We should foster a culture of fearless experimentation and learning. What this means is that we are not afraid to try things out. We are also not afraid to admit we were wrong. We learned something.
+
+When people feel that it is okay to be wrong, they are more likely to look beyond their fears and image. Instead of fighting to defend a broken feature, they will help figure out *why* it is broken, what can be done to fix it, or if it should just be removed again.
+
+Of course successes should be celebrated. But try to also celebrate good process, learning, and admitting to being wrong.
+
+#### Kill unneeded features
+
+The company from the example above did one thing right: When the feature did not work, they removed it again. They waited way too long to do so, but they removed it. 
 
 ## Collaboration
 
@@ -121,7 +185,8 @@ By making it an explicit requirement. And then doing the work to ensure it happe
 - Business should not change the terms often. It should be understood that changing terms costs real time and effort for Development. If a term needs to change, it should. But proper care should be taken in choosing terms well.
 - Changing terms used in code should be a separate ticket in its own right. It is important work, not an afterthought.
 
-### Pull Requests
+### Pull Requests / Merge Requests
+A Pull Request (PR), or Merge Request (MR) is the act of requesting to pull / merge code from one Git branch into another. They are called Pull Requests in GitHub and Merge Requests in Gitlab. They are exactly the same thing, and will have one or the other name in a company depending on the code organisation platform used.
 
 #### Reviewing pull requests
 ##### Always be polite and friendly
@@ -408,12 +473,6 @@ Personal credit card creation. The system:
 ```
 
 There is a lot going on here! It took me all of 5 minutes to write, and anyone who needs to work on anything related to issuing credit card can now easily see the high-level of what should happen when doing so.
-
-## Recommended books
-
-- [DDD: Eric Evans, Domain Drive Design](https://www.oreilly.com/library/view/domain-driven-design-tackling/0321125215/)
-- [Getting Real](https://basecamp.com/books/Getting%20Real.pdf)
-- [Good to Great](https://www.amazon.de/dp/0066620996)
 
 ## Tools
 ### Clipboard history
