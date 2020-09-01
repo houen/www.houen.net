@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-bundle exec jekyll serve
+doctoc --maxlevel 3 _pages/work-guide.md
