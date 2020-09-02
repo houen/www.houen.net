@@ -139,9 +139,11 @@ It is a small change, but it still needs doing. Someone needs to  think of it. S
 
 Now say we introduce a new email "reminder 2" which is only for non-admin users. This one will also need to take admins into account.
 
-Then we add a new user type, accounting, which should also not get the "regular user" emails. Now we need to expand the if-statements in both the reminder and reminder 2 emails.
+Then we add a new user type, accounting, which should also not get the "regular user" emails. Now we need to expand the if-statements in both the "reminder" and "reminder 2" emails.
 
-When we keep adding features, the interactions between them get more and more complicated, and changes become more costly. At some point, a feature will have some many interactions that adding one costs the equivalent time (salary) of two features, had you had less of them.
+The first feature was just the cost of implementing that single one. The second feature Had two necessary changes in order to implement one feature. The third also two. The third one was touching the logic of both the email features. It required three changes.
+
+The work required for each feature quickly grows in complexity the more features we add. The interactions between them get more and more complicated. Changes become increasingly costly. At some point, a feature will have so many interactions that adding one costs double the time (salary) of implementing it, had there been less features in the system.
 
 > Every time you decide to add a feature you are choosing to not add a different future feature.
 
