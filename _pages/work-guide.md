@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Work Guide
+category: work-guide
 ---
 
 <!-- https://guides.github.com/features/mastering-markdown/ -->
@@ -10,7 +11,7 @@ I try to use these as principles to help me do better work.
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents** 
+### Table of Contents
 
 - [Coding](#coding)
   - [Get to the first production version with as little effort as possible](#get-to-the-first-production-version-with-as-little-effort-as-possible)
@@ -69,57 +70,83 @@ Teams can be heavily slowed down by building the wrong thing. If it takes 5 hour
 The longer you wait to build something, the better you understand *what to build* and *how to build it*.
 
 ### The cost of features
-The cost of developing feature is not as simple as just building it. If something takes 20 hours to build, one might think "ah, we only have to invest a single week". Yes, but this is just the up-front cost. After this comes:
+The cost of developing feature is not as simple as just building it. Of course the cost varies from feature to feature. However, we can get a basic feel for it by looking at the people involved. For each feature, the company will be paying:
+
+- The product owner for designing the feature
+- The product team for discussing the feature
+- The development team for discussing the feature
+- The assigned engineers for building the feature
+- QA or the assigned engineers for testing the feature
+- The product owner for evaluating and signing off on the development work.
+- The product team for discussing how the finished feature works and performs
+- The customer support team for supporting the feature
+- The development team for fixing bugs related to the feature
+- The development team for incorporating the feature code into all following development work.
+
+There are a *lot* of people involved in building each feature! And this is how it looks like in most medium-to-large software companies following modern Agile principles. This is the lean version!
+
+And the above is only considering the up-front cost of building the feature. After that comes the long tail engineering cost.
+
+#### The long tail engineering cost of features
+If something takes 40 hours for engineering to build, one might think "ah, we only have to invest a single man-week". Yes, but this is just the up-front cost. After this comes:
 
 - Maintenance
 - Bug fixes
 - Added code complexity
 - Potential added data model complexity
 - Customer support
-- Onboarding of new developers
+- New developers learning about the feature during onboarding
 
-These are all small at first, but add up over time. The real killer is the code complexity. The time needed to build new features does not grow linearly. For every feature you add you are increasing the cost of: 
+These are all small at first, but they add up over time. The real killer is the code complexity. 
 
-- Building new features in the future. 
-- Maintaining existing features.
+> For every feature you add you are increasing the cost of *new features as well as maintaining the ones you already have*. 
 
-Every time you decide to add a feature you are choosing to not add a future feature. You can throw more engineers at it, but this will also increase the overhead of collaboration and management. With enough people, you will at some point need to split into multiple services. This adds an amazing amount of overhead. For more on this, see [The mythical man-month](#books).
+This relationship is not linear. It gets more and more expensive with each feature added.
 
-And the above is only considering the engineering cost. It gets worse when we looks at the big picture:
+So why is it like this? A couple of reasons:
 
-#### How much does a feature cost?
-Of course this varies. But we can try to get a feel for it by looking at the people involved. For each feature, the company will be paying:
+##### Engineers must fit all business cases and code in their head
+When an engineer needs to change something about a codebase, they first need to wrap their head around all the business cases and code points they will be touching.
 
-- The Product Owner for designing the feature
-- The product team for discussing the feature
-- The development team for discussing the feature
-- The assigned engineers for building the feature
-- QA or the assigned engineers for testing the feature
-- The Product Owner for evaluating and signing off on the development work.
-- The product team for discussing how the finished feature works and performs
-- The customer support team for supporting the feature
-- The development team for fixing bugs related to the feature
-- The development team for *incorporating the feature code into all new development work*.
+As an example: Say we are changing a user signup flow. We already have a "welcome" email. Now we also want to add a "reminder" email to be sent in case they have not completed their profile 7 days after creating their account.
 
-There are a *lot* of people involved in building each feature! And this is how it looks like in most medium-to-large software companies following Agile principles.
+Okay. We need to add a scheduled job with code to check whether a users profile is completed. This job should be scheduled for 7 days after account creation. If the profile is not complete, it should send an email following a template. Here's the Gherkin code for it:
 
-> Every time you decide to add a feature you are choosing to not add a future feature.
+> Feature: Reminder email\
+> Given I have created a user account\
+> When 7 days have passed\
+> And I have not completed my user profile\
+> Then I should receive a reminder email to complete my profile\
 
-#### Example: Building something nobody needs
+Fair enough. We code it, write tests for it, deploy it, get it signed off on. Done.
 
-I once worked in a company where we were tasked with building a highly sophisticated way of automatically generating content on behalf of the customers. There were five or seven different set of rules to follow, and the customers could choose between these. This choice would then seed an algorithm to build randomized personalized content. The content would then auto-grow every month. Everything needed to be customizable by the customer. Content would depend on the generated content of previous months.
+Now comes the next feature: There should be an "admin" type user, which can manage a subset of users under their company umbrella. For this we need to add a user role field, and the back office admin section for this new user type.
 
-This came straight from the top and was the most important feature ever. At the time I did not know enough to push back properly.
+However, admin users should not receive a reminder email. So on top of the features we need to add, we need to change the existing reminder email feature:
 
-It took 3 people two months to build everything related to this. A total of 6 man-months of work. It also *severely* complicated the data model.
+> Feature: Reminder email\
+> Given I have created a user account\
+> When 7 days have passed\
+> And I have not completed my user profile\
+> **And I an not an admin user**\
+> Then I should receive a reminder email to complete my profile\
 
-Several years later I briefly worked with the same company again. One of my first tasks was *removing the feature*. At that point it had been slowing down development for years.  It was responsible for much of both the code complexity and database size. 
+It is a small change, but it still needs doing. Someone needs to  think of it. Someone needs to do it. Here are some associated costs to the company:
 
-With the time spent removing the feature again, plus the maintenance done in the intermittent years, this single feature cost the company *12-18 months* of developer work. And this is not counting the cost the more complicated data model will have had on slowing down / having to reject other new features.
+- Change cost: The change must be discussed. It must be planned. Code must be changed. Tests must be updated. Code must be reviewed. Features must be re-reviewed by the product owner.
+- Risk: While implementing the admin user, the engineers might introduce a new bug in the reminder email system.
+- Risk: Any future emails now possibly need to distinguish between user roles.
 
-In the end, the feature was used by under 50 customers. It was something needed by nobody. What the customers turned out to really want was much simpler manually curated content which they could choose from. 
+Now say we introduce a new email "reminder 2" which is only for non-admin users. This one will also need to take admins into account.
 
-Something which could have been done in 1-2 weeks.
+Then we add a new user type, accounting, which should also not get the "regular user" emails. Now we need to expand the if-statements in both the reminder and reminder 2 emails.
+
+When we keep adding features, the interactions between them get more and more complicated, and changes become more costly. At some point, a feature will have some many interactions that adding one costs the equivalent time (salary) of two features, had you had less of them.
+
+> Every time you decide to add a feature you are choosing to not add a different future feature.
+
+Of course, you can throw more engineers at it, but this will also increase the overhead of collaboration and management. With enough people, you will at some point need to split into multiple services. This again adds an amazing amount of overhead. Thus, hiring more engineers is a patch-job, not a perfect solution. For more on this, see the book [The mythical man-month](/books).
+
 
 ### Track feature value
 From the hidden cost of long-tail maintenance we see the cost of maintaining a feature in your product. We know a feature costs money, and the more features you build, the more each feature costs. This relationship is worse than linear.
@@ -159,7 +186,38 @@ Of course successes should be celebrated. But try to also celebrate good process
 
 #### Kill unneeded features
 
-The company from the example above did one thing right: When the feature did not work, they removed it again. They waited way too long to do so, but they removed it. 
+When a feature is not performing, you should remove it as soon as possible. You pay a small price to remove it, and in return you get:
+
+- Future features are cheaper and easier to build.
+- Current features are cheaper and easier to maintain.
+- You can faster react to changing business requirements.
+- Less time spent on technical cleanup / refactoring tasks.
+- Happier engineers. Engineers *love* removing code, because it means their future job gets easier.
+
+
+#### Example: Building something nobody needs
+
+Here is an example of all of the above from real life:
+
+I once worked in a company where we were tasked with building a highly sophisticated way of automatically generating content on behalf of the customers. There were five or seven different set of rules to follow, and the customers could choose between these. This choice would then seed an algorithm to build randomised personalised content. The content would then auto-grow every month. Everything needed to be customisable by the customer. Content would depend on the generated content of previous months.
+
+This came straight from the top and was the most important feature ever. At the time I did not know enough to push back properly.
+
+It took 3 people two months to build everything related to this. A total of 6 man-months of work. It also *severely* complicated the data model.
+
+Several years later I briefly worked with the same company again. One of my first tasks was *removing the feature*. At that point it had been slowing down development for years.  It was responsible for much of both the code complexity and database size. 
+
+With the time spent removing the feature again, plus the maintenance done in the intermittent years, this single feature cost the company *12-18 months* of developer work. And this is not counting the cost the more complicated data model will have had on slowing down / having to reject other new features.
+
+In the end, the feature was used by under 50 customers. It was something needed by nobody. What the customers turned out to really want was much simpler manually curated content which they could choose from. 
+
+Something which could have been done in 1-2 weeks.
+
+The company from the example above did one thing right: When the feature did not work, they removed it again. They waited way too long to do so, but at least they removed it, instead of throwing more good money after a bad feature.
+
+#### Conclusion
+
+> Every time you decide to add a feature you are choosing to not add a future feature. Choose your features with care. Track feature value. Keep only those which add real and significant business value. Remove those features which do not perform.
 
 ## Collaboration
 
@@ -520,3 +578,8 @@ Largely based on Joel Spolskys list from [The Guerrilla Guide to Interviewing (v
     - Post-morten
 - You cannot fix culture with structure
 - Maximum 70% workload so you have capacity to handle the unexpected
+- Trust your engineers
+- Provide decent workspaces for your engineers
+  - Provide a quiet, calm environment for your engineers
+    - Never, ever place engineering in the same room as sales
+- Provide phone booth boxes
