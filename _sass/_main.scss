@@ -201,10 +201,22 @@ figcaption {
     font-size: smaller;
 }
 
+// HOUEN ADDITIONS
+
 section ul li {
 	margin-left: 1rem;
 }
 
 nav.navigation {
 	position: fixed;
+}
+
+section.page {
+	h2 {
+		margin: 3rem 0 1rem 0;
+	}
+
+	h3 {
+		margin: 2rem 0 1rem 0;
+	}
 }
