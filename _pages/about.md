@@ -4,11 +4,11 @@ title: About Me
 ---
 
 - Name: Søren Houen
-- Relationship: Married, with one child
-- Living in: [Berlin, Germany](https://www.google.de/maps/place/Berlin/@52.0182631,12.4065065,7.36z)
-- Profession: Software Engineer for 15 years since 2005
-- Education: MsC Computer Science from [University of Copenhagen](https://studies.ku.dk/masters/computer-science/), Denmark
+- Relationship: Married, one child
+- Location: Berlin, Germany
+- Profession: Software Engineer, 15 years
+- Education: MsC Computer Science from [University of Copenhagen](https://studies.ku.dk/masters/computer-science/){:target="_blank"}, Denmark
 
 ## Links
-- CV: [View](https://www.dropbox.com/s/0t4gqn50vt9flnk/CV_condensed.pdf?dl=0){:target="_blank"}
+- CV: [View](https://www.dropbox.com/s/0t4gqn50vt9flnk/CV_condensed.pdf?dl=1){:target="_blank"}
 - LinkedIn profile: [View](https://www.linkedin.com/in/shouen){:target="_blank"}
