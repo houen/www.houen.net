@@ -141,7 +141,7 @@ Now say we introduce a new email "reminder 2" which is only for non-admin users.
 
 Then we add a new user type, accounting, which should also not get the "regular user" emails. Now we need to expand the if-statements in both the "reminder" and "reminder 2" emails.
 
-The first feature was just the cost of implementing that single one. The second feature Had two necessary changes in order to implement one feature. The third also two. The third one was touching the logic of both the email features. It required three changes.
+The first feature was just the cost of implementing that single one. The second feature had two necessary changes in order to implement one feature. The third also two. The third one was touching the logic of both the email features. It required three changes.
 
 The work required for each feature quickly grows in complexity the more features we add. The interactions between them get more and more complicated. Changes become increasingly costly. At some point, a feature will have so many interactions that adding one costs double the time (salary) of implementing it, had there been less features in the system.
 
@@ -151,9 +151,9 @@ Of course, you can throw more engineers at it, but this will also increase the o
 
 
 ### Track feature value
-From the hidden cost of long-tail maintenance we see the cost of maintaining a feature in your product. We know a feature costs money, and the more features you build, the more each feature costs. This relationship is worse than linear.
+From the hidden cost of long-tail maintenance we see the cost of maintaining a feature in your product. We know a feature costs money, and the more features you build, the more each feature costs.
 
-Because of this it is important to track the performance of your features. By doing this we can remove those that do not perform.  
+Because of this it is important to track the performance of your features. By tracking them we can remove those that do not perform.  
 
 To track performance, first we must try to quantify how much true business value a feature is bringing in.
 Did you change the way the signup process works - how did that affect drop-off rate during signups?
@@ -497,13 +497,17 @@ http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions -->
 
 > The code should not be the only source of truth
 
-Often in companies you see that there is not "source of truth" except from the code. Jira tickets are written for each Sprint, and then left to rot and grow obscure. The code is considered the source of truth. When a new developer asks "how should X work" the answer is "check the code".
+Often in companies you see that there is no "source of truth" except from the code. Jira tickets are written for each Sprint, and then left to rot and grow obscure. The code is considered the source of truth. When a new developer asks "how should X work" the solution is to read the code. The code is the single source of truth. 
 
-This works ok-*ish* most of the time. Everything the developers do takes longer than it has to because they have to talk to three different people and come back to ask "what about this edge case" because nobody had thought about it.
+This is not ideal. Everything the developers do takes longer than necessary. In order to understand what to change the developers have to talk to three different people. After they start coding they need to come back to ask "what about this edge case" because nobody had thought about it when writing the ticket. 
+This process is slower than it needs to, but it somewhat works most of the time.
 
-But then someone discovers a bug in the code. They suspect that flow A is not correct because they are getting weird errors downstream from it in flow B. Flow A was created three years ago and nobody working on it now works in the company anymore. It is a mess of indirection and it is a bit hard to see everything it is supposed to do.
+
+Now someone discovers a bug in the code. They suspect that flow A is not correct because they are getting weird errors downstream from it in flow B. Flow A was created three years ago and nobody working on it now works in the company anymore. It is a mess of indirection and it is a bit hard to see everything it is supposed to do.
 
 In cases of doubt like these as to how something works, they now have to read through 10+ files of source code, as well as dig up ancient Jira tickets to find out how things should work. Since it is hard to figure out *how it should work*, not how to code it, this takes up everyones time: All three senior developers, as well as the product owner and two business people end up getting involved at some point. Everyone now has to context switch and spend time they should be using moving forward, on looking back.
+
+<!-- TODO: Continue writing on this: Unfortunately, when the source of truth is left to the engineers to manage and discover all edge cases, you often also come across the notion that engineering is working slowly. -->
 
 When you are working and evolving a mature system, it pays to keep a very simple source of truth on how things should work. The added clarity for everyone involved is worth the investment.
 
@@ -585,3 +589,4 @@ Largely based on Joel Spolskys list from [The Guerrilla Guide to Interviewing (v
   - Provide a quiet, calm environment for your engineers
     - Never, ever place engineering in the same room as sales
 - Provide phone booth boxes
+- To rewrite the code from scratch or not?
