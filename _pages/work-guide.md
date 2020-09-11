@@ -590,3 +590,4 @@ Largely based on Joel Spolskys list from [The Guerrilla Guide to Interviewing (v
     - Never, ever place engineering in the same room as sales
 - Provide phone booth boxes
 - To rewrite the code from scratch or not?
+- No big changes deployed on a Friday
