@@ -1,0 +1,4 @@
+rpi.houen.net
+
+root * /var/www/html
+file_server

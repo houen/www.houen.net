@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Recommended books
+permalink: /books/
 ---
 
 <!-- TODO: Write a little about each one. -->
