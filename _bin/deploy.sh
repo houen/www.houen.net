@@ -15,7 +15,7 @@
 
 jekyll build
 rsync --recursive --delete _bin/on_rpi_server rpi.houen.net:/home/houen/www.houen.net/bin
-rsync --recursive --delete _site rpi.houen.net:/home/houen/www.houen.net/site
+rsync --recursive --delete _site/ rpi.houen.net:/home/houen/www.houen.net/site/
 ssh rpi.houen.net "docker stop www_houen_net"
 ssh rpi.houen.net "docker rm www_houen_net"
 ssh rpi.houen.net "sh /home/houen/www.houen.net/bin/docker_start.sh"
