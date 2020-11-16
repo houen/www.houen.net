@@ -498,15 +498,20 @@ http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions -->
 
 > The code should not be the only source of truth
 
-Often in companies you see that there is no "source of truth" except from the code. Jira tickets are written for each Sprint, and then left to rot and grow obscure. The code is considered the source of truth. When a new developer asks "how should X work" the solution is to read the code. The code is the single source of truth. 
+Often in companies you see that there is no "source of truth" except from the code. Jira tickets are written for each Sprint, and then left to rot and grow obscure. When a new developer asks "how should X work" the solution is to read the code. The code is the only source of truth. 
 
-This is not ideal. Everything the developers do takes longer than necessary. In order to understand what to change the developers have to talk to three different people. After they start coding they need to come back to ask "what about this edge case" because nobody had thought about it when writing the ticket. 
-This process is slower than it needs to, but it somewhat works most of the time.
+This is not ideal. Everything the developers do takes longer than necessary. In order to understand what to change for a feature the developers have to talk to three different people. After they start coding they need to come back to ask "what about this edge case" because nobody had thought about it when writing the ticket. This process *somewhat* works. Most of the time. But it is slow. Very slow. And for every feature, every bug, it gets slower and slower.
+ 
+Then the inevitable happens: Engineering is being labeled as slow. Business is demanding faster results. Product managers are stressed. They stress the engineers. The engineers cut corners to "deliver the sprints". Maybe sick leave in engineering starts going up. Some people go down with stress. Guess what comes next:
 
+People. Start. Quitting.
+- Senior / talented people leave 
 
 Now someone discovers a bug in the code. They suspect that flow A is not correct because they are getting weird errors downstream from it in flow B. Flow A was created three years ago and nobody working on it now works in the company anymore. It is a mess of indirection and it is a bit hard to see everything it is supposed to do.
 
-In cases of doubt like these as to how something works, they now have to read through 10+ files of source code, as well as dig up ancient Jira tickets to find out how things should work. Since it is hard to figure out *how it should work*, not how to code it, this takes up everyones time: All three senior developers, as well as the product owner and two business people end up getting involved at some point. Everyone now has to context switch and spend time they should be using moving forward, on looking back.
+In cases of doubt like these as to how something works, developers now have a lot of work just finding out how something should work. They have to read through 10+ files of source code, as well as dig up ancient Jira tickets to figure things out. Since it is hard to figure out *how it should work*, not how to code it, this takes up *everyone's* time: All three senior developers, as well as the product owner and two business people end up getting involved at some point. Everyone now has to context switch and spend time they should be using moving forward, on looking back.
+
+So now a simple bug takes a very long time to fix. Not because of the actual time to build it. Because it takes a long, long time to figure out 
 
 <!-- TODO: Continue writing on this: Unfortunately, when the source of truth is left to the engineers to manage and discover all edge cases, you often also come across the notion that engineering is working slowly. -->
 
@@ -592,3 +597,4 @@ Largely based on Joel Spolskys list from [The Guerrilla Guide to Interviewing (v
 - Provide phone booth boxes
 - To rewrite the code from scratch or not?
 - No big changes deployed on a Friday
+- Use an AppLogger to log domain events: [APPNAME][LEVEL][CALLER CLASS] msg (plus TID if log system does not show similar)
