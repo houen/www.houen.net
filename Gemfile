@@ -4,7 +4,6 @@ ruby "2.7.1"
 
 gem "jekyll"
 gem 'jekyll-paginate'
-gem 'jekyll-seo'
 gem 'jekyll-seo-tag'
 gem 'jekyll-sitemap'
 
