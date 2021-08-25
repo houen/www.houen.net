@@ -16,10 +16,11 @@ permalink: pretty
 
 kramdown:
   auto_ids: true
+  input: GFM
 
 baseurl: ""
 
-highlighter: none
+highlighter: rouge
 
 exclude:
   - .jekyll-cache

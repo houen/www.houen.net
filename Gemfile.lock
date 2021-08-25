@@ -70,6 +70,7 @@ DEPENDENCIES
   jekyll-paginate
   jekyll-seo-tag
   jekyll-sitemap
+  rouge
 
 RUBY VERSION
    ruby 2.7.1p83

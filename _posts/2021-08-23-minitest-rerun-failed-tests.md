@@ -7,7 +7,7 @@ tags: [ruby, testing, minitest]
 
 I have started using [Minitest](https://github.com/seattlerb/minitest) instead of [RSpec](https://github.com/rspec/rspec) for my Rails testing.
 
-The learning curve was a bit tricky, since they approach testing in somewhat different ways. But Minitest is a joy to use once I got the hang of it. I dont even miss `let!`'s at all. In retrospect, I had picked up some bad testing habits from RSpec. Now my tests are much simpler and more verbose. Thanks to Minitest and [Ryan Davis](https://www.zenspider.com/) they are also faster.
+The learning curve was a bit tricky, since they approach testing in somewhat different ways. But Minitest is a joy to use once I got the hang of it. I dont even miss `let!`'s at all. In retrospect, I had picked up some bad testing habits. Now my tests are much simpler and more verbose. Thanks to Minitest and [Ryan Davis](https://www.zenspider.com/) they are also faster.
 
 ## Rerunning failed tests easily with Minitest
 
@@ -25,6 +25,8 @@ I add the [file below](#minitest-failed-tests-reporter-code) to a project and in
 Minitest::Reporters.use! [Minitest::Reporters::ProgressReporter.new, Minitest::Reporters::FailedTestsReporter.new(verbose: true, include_line_numbers: true)]
 ```
 
+After running my tests, there will be a new file `.minitest_failed_tests.txt` in my project dir. The path to put the file in is configurable when initializing the reporter.
+
 I can now rerun only failed tests with:
 
 ```
@@ -34,6 +36,7 @@ bundle exec rails test $(cat .minitest_failed_tests.txt)
 ## Minitest failed tests reporter code
 
 **test/support/minitest/reporters/failed_tests_reporter.rb**
+
 ```ruby
 {% include_relative 2021-08-23-minitest-rerun-failed-tests/failed_tests_reporter.rb %}
 ```

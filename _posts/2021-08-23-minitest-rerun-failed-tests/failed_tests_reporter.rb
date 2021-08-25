@@ -1,5 +1,9 @@
 module Minitest
     module Reporters
+      # Source: https://www.houen.net/2021/08/23/minitest-rerun-failed-tests/
+      # Author: Søren Houen
+      # License: MIT
+      #
       # Outputs failed tests to screen and / or file
       # Allows to rerun only failed tests with minitest if added to Minitest::Reporters.use!
       #
