@@ -2,7 +2,7 @@
 layout: post
 title: Minitest Rerun failed tests
 description: Easily rerun failed tests with this Minitest reporter
-tags: [ruby, testing, minitest]
+tags: [minitest, ruby, testing]
 ---
 
 I have started using [Minitest](https://github.com/seattlerb/minitest) instead of [RSpec](https://github.com/rspec/rspec) for my Rails testing.
@@ -17,15 +17,41 @@ So I wrote a custom reporter based on [Minitest-reporters](https://github.com/mi
 
 It should really be a gem instead, and I might get around to "gemify" it at a later point.
 
-## How to rerun failed tests
-
-I add the [file below](#minitest-failed-tests-reporter-code) to a project and include it with Minitest-reporters like this:
+## Installation
+1. Install [Minitest-reporters](https://github.com/minitest-reporters/minitest-reporters)
+1. Add the [file below](#minitest-failed-tests-reporter-code) to your project
+1. Include it with Minitest-reporters at the end of the list like this:
 
 ```ruby
-Minitest::Reporters.use! [Minitest::Reporters::ProgressReporter.new, Minitest::Reporters::FailedTestsReporter.new(verbose: true, include_line_numbers: true)]
+# You can put the file wherever you like
+require 'your/path/to/failed_tests_reporter.rb'
+
+# ...
+
+Minitest::Reporters.use! [
+  Minitest::Reporters::ProgressReporter.new, # This is just my preferred reporter. Use the one(s) you like.
+  Minitest::Reporters::FailedTestsReporter.new(verbose: true, include_line_numbers: true)
+]
 ```
 
-After running my tests, there will be a new file `.minitest_failed_tests.txt` in my project dir. The path to put the file in is configurable when initializing the reporter.
+## Output of failed tests reporter
+### List of failed tests
+I recommed you add it at the end of the reporters list. When doing so and using the "verbose: true" option , the failed test reporter will output a list of all failed tests at the end of your test run. This will give you a way to easily run single tests in an IDE (I use [Rubymine](https://www.jetbrains.com/ruby/) myself) while still having a clear overview of which ones needs fixing.
+
+### The Seed
+Do you know the minitest seed issue? The seed is displayed only at the top of a test run.
+
+I have worked in many companies with very, very verbose test output. Hundreds of lines of warnings, etc. etc. 
+
+This means that the seed is long gone from my terminal scroll history when my tests are finished.
+
+The failed test reporter will output the seed at the end of a test run for exactly this reason.
+
+### Failed tests file
+When not run with option `file_output: false`, the reporter will place a file called `.minitest_failed_tests.txt` in the project root. This file lists the failed test files (with line numbers if option `include_line_numbers: true`). The path to put the file in is configurable when initializing the reporter.
+
+## How to rerun just the failed tests
+After running my tests, there will be the new file `.minitest_failed_tests.txt` in my project dir.
 
 I can now rerun only failed tests with:
 
@@ -33,9 +59,10 @@ I can now rerun only failed tests with:
 bundle exec rails test $(cat .minitest_failed_tests.txt)
 ```
 
-## Minitest failed tests reporter code
+## Source code
+Source code of Minitest failed tests reporter:
 
-**test/support/minitest/reporters/failed_tests_reporter.rb**
+**test/support/minitest/reporters/failed_tests_reporter.rb** (this is where I like to put it)
 
 ```ruby
 {% include_relative 2021-08-23-minitest-rerun-failed-tests/failed_tests_reporter.rb %}

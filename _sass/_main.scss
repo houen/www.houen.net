@@ -15,6 +15,17 @@ body {
 	color: rgb(22, 23, 26);
 }
 
+.logo {
+	//display: block;
+	//position: absolute;
+	//top: 10px;
+	//left: 10px;
+	//background: #ffffff;
+	img {
+		max-width: 20rem;
+	}
+}
+
 nav ul {
     border-right: 1px solid #edf2f7;
 }
@@ -219,4 +230,8 @@ section.page {
 	h3 {
 		margin: 2rem 0 1rem 0;
 	}
+}
+
+section.home img.logo {
+ max-width: 30rem;
 }
