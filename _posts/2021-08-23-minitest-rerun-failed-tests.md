@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Minitest Rerun failed tests
+title: Rerunning Minitest failed tests
 description: Easily rerun failed tests with this Minitest reporter
 tags: [minitest, ruby, testing]
 ---
