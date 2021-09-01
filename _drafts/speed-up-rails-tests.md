@@ -5,5 +5,6 @@ layout: post
 tags: [ruby, testing, minitest, rspec, capybara]
 ---
 
-## Smallest file size for images
-https://upload.wikimedia.org/wikipedia/commons/c/ca/1x1.png
+Here are suggestions to speed up your Rails testing.
+
+- https://upload.wikimedia.org/wikipedia/commons/c/ca/1x1.png

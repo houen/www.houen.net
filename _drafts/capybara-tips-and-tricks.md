@@ -5,6 +5,9 @@ description: Easily get and list all attributes for a Capybara element with .nat
 tags: [capybara, ruby, testing]
 ---
 
+Here is a collection of tips and tricks for Capybara.
+
+
 ## Finding and getting things
 
 ### Get all attributes for element
