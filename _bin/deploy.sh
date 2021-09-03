@@ -1,6 +1,14 @@
 #!/usr/bin/env bash
 
-# _bin/doctoc.sh
+set -e
+
+dt=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+
+_bin/doctoc.sh
+
+git add .
+git commit -am "deploy on $dt"
+
 # git commit -m "update TOC" _pages/work-guide.md
 
 # # TODO: pull work_guide/README.md from Dropbox/GitHub and link

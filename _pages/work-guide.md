@@ -595,6 +595,18 @@ Largely based on Joel Spolskys list from [The Guerrilla Guide to Interviewing (v
     - Post-morten
 - You cannot fix culture with structure
 - Maximum 70% workload so you have capacity to handle the unexpected
+  - Allows continuous improvement
+  - Two ways engineering can go
+    - Relaxed engineers
+      - Code is easy to understand
+      - Well tested
+      - Few bugs
+      - => Leads to more good / easy to understand code => Faster code and better tests => Fast tests / Fast development
+    - Stressed engineers
+      - Code is hard to understand
+      - Few and / or slow tests
+      - Many bugs
+      - => Leads to more time spent fixing bugs => More bad / hard to understand code => Slow tests / Slow development
 - Trust your engineers
 - Provide decent workspaces for your engineers
   - Provide a quiet, calm environment for your engineers
