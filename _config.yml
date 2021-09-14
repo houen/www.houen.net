@@ -39,7 +39,6 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-last-modified-at
-#  - jekyll-redirect-from
 
 collections:
   pages:
@@ -47,7 +46,7 @@ collections:
     permalink: /:name
   posts:
     output: true
-    permalink: /:slug
+    permalink: /:year/:month/:day/:slug/
   
 defaults:
   -
