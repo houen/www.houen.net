@@ -10,6 +10,8 @@ I finally got around to making a gem for rerunning failed tests with Minitest.
 
 Find it on Github here: [minitest-rerun-failed](https://github.com/houen/minitest-rerun-failed)
 
+---
+
 ## Background
 
 I have started using [Minitest](https://github.com/seattlerb/minitest) instead of [RSpec](https://github.com/rspec/rspec) for my Rails testing.
