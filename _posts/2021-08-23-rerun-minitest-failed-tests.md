@@ -9,11 +9,15 @@ redirect_from:
 ---
 
 ## Update: Its now a gem :-)
-I finally got around to making a gem for rerunning failed tests with Minitest. 
+I finally got around to making a gem to rerun failed tests with Minitest. 
 
 Find it on Github here: [minitest-rerun-failed](https://github.com/houen/minitest-rerun-failed)
 
+<br>
+
 ---
+
+<br>
 
 ## Background
 
