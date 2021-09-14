@@ -5,6 +5,7 @@ ruby "3.0.1"
 gem "jekyll"
 gem 'jekyll-paginate'
 gem 'jekyll-seo-tag'
+gem 'jekyll-seo'
 gem 'jekyll-sitemap'
 gem "rouge"
 gem "webrick"

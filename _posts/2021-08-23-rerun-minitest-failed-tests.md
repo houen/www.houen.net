@@ -5,6 +5,7 @@ description: Rerun minitest failed tests easily
 tags: [minitest, ruby, testing]
 redirect_from:
 - /2021/08/23/minitest-rerun-failed-tests/
+- /minitest-rerun-failed-tests/
 ---
 
 ## Update: Its now a gem :-)
