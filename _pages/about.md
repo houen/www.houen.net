@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About Me
-permalink: /about/
+permalink: /about
 robots: noindex, follow
 ---
 My name is Søren. I am man from Denmark now living in Berlin with my wife and daughter.

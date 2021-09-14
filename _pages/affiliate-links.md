@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Affiliate links
-permalink: /affiliate-links/
+permalink: /affiliate-links
 robots: noindex, follow
 ---
 
