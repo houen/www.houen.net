@@ -31,7 +31,6 @@ jekyll build
 # ssh rpi.houen.net "sh /home/houen/www.houen.net/bin/docker_start.sh"
 
 # NEW, FOR SIMPLY.COM
-
 echo ""
 echo ""
 echo "Syncing to simply.com public_html folder. Password: nia"
