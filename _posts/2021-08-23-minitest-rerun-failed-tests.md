@@ -5,19 +5,24 @@ description: Easily rerun failed tests with this Minitest reporter
 tags: [minitest, ruby, testing]
 ---
 
+## Update: Its now a gem :-)
+I finally got around to making a gem for rerunning failed tests with Minitest. 
+
+Find it on Github here: [minitest-rerun-failed](https://github.com/houen/minitest-rerun-failed)
+
+## Background
+
 I have started using [Minitest](https://github.com/seattlerb/minitest) instead of [RSpec](https://github.com/rspec/rspec) for my Rails testing.
 
 The learning curve was a bit tricky, since they approach testing in somewhat different ways. But Minitest is a joy to use once I got the hang of it. I dont even miss `let!`'s at all. In retrospect, I had picked up some bad testing habits. Now my tests are much simpler and more verbose. Thanks to Minitest and [Ryan Davis](https://www.zenspider.com/) they are also faster.
 
-## Rerunning failed tests easily with Minitest
+## But: I want to easily rerun failed tests with Minitest
 
 One thing I was missing in Minitest from RSpec was a way to very easily rerun just my failed tests from the last test run. 
 
 So I wrote a custom reporter based on [Minitest-reporters](https://github.com/minitest-reporters/minitest-reporters) to do just that.
 
-It should really be a gem instead, and I might get around to "gemify" it at a later point.
-
-## Installation
+## Installation (outdated - [use the gem instead](https://github.com/houen/minitest-rerun-failed))
 1. Install [Minitest-reporters](https://github.com/minitest-reporters/minitest-reporters)
 1. Add the [file below](#minitest-failed-tests-reporter-code) to your project
 1. Include it with Minitest-reporters at the end of the list like this:
