@@ -2,7 +2,7 @@
 layout: page
 title: Software Engineering Work Guide
 category: work-guide
-permalink: /work-guide/
+permalink: /work-guide
 ---
 
 <!-- https://guides.github.com/features/mastering-markdown/ -->
