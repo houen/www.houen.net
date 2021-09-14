@@ -70,5 +70,5 @@ Source code of Minitest failed tests reporter:
 **test/support/minitest/reporters/failed_tests_reporter.rb** (this is where I like to put it)
 
 ```ruby
-{% include_relative 2021-08-23-minitest-rerun-failed-tests/failed_tests_reporter.rb %}
+{% include_relative assets/2021-08-23-minitest-rerun-failed-tests/failed_tests_reporter.rb %}
 ```
