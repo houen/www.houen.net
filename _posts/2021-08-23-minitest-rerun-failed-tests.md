@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Rerunning Minitest failed tests
-description: Easily rerun failed tests with this Minitest reporter
+title: Rerun Minitest failed tests
+description: Rerun minitest failed tests easily
 tags: [minitest, ruby, testing]
 redirect_from:
 - /2021/08/23/minitest-rerun-failed-tests/
