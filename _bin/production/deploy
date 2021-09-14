@@ -4,7 +4,7 @@ set -e
 
 dt=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
 
-_bin/doctoc.sh
+_bin/dev/doctoc
 
 git add .
 git commit -am "deploy on $dt" || echo "Up-to-date. Nothing to commit"
