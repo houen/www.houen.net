@@ -3,6 +3,7 @@ layout: home
 title: Front page
 description: Web home of me (Søren Houen) where I write about Software Engineering
 permalink: /
+robots: noindex, follow
 ---
 
 ## Welcome

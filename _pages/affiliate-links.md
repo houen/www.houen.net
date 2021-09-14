@@ -2,6 +2,7 @@
 layout: page
 title: Affiliate links
 permalink: /affiliate-links/
+robots: noindex, follow
 ---
 
 Some of the links I post here contain affiliate links to products where I will earn a commission if they are purchased.

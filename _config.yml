@@ -1,6 +1,7 @@
 site: www.houen.net
 url: https://www.houen.net
 title: houen.net
+timezone: Europe/Berlin
 # description: Simple and minimalistic jekyll blogging theme.
 # twitter:
 #   username: #yourusername

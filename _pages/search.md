@@ -2,6 +2,7 @@
 layout: page
 title: Search
 permalink: /search/
+robots: noindex, follow
 ---
 
 <style>
