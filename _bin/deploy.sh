@@ -7,7 +7,7 @@ dt=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
 _bin/doctoc.sh
 
 git add .
-git commit -am "deploy on $dt"
+git commit -am "deploy on $dt" || echo "Up-to-date. Nothing to commit"
 
 # git commit -m "update TOC" _pages/work-guide.md
 
