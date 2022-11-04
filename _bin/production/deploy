@@ -39,6 +39,6 @@ echo ""
 echo ""
 echo "Syncing to simply.com public_html folder. Password: nia"
 echo ""
-rsync --recursive --delete -o UpdateHostKeys=no _site/ houen.net@linux23.unoeuro.com:public_html/
+rsync -o UpdateHostKeys=no --recursive --delete _site/ houen.net@linux23.unoeuro.com:public_html/
 echo ""
 echo "[DONE]"
