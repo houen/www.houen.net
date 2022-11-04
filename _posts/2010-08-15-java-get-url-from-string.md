@@ -30,4 +30,4 @@ return links;
 ## Book Recommendation: Java in a Nutshell
 Interested in learning more and better Java? Then I recommend the Java book I most recently read: ["Java in a Nutshell: A Desktop Quick Reference"](https://amzn.to/3pjbekB) published by O’Reilly.
 
-![Java in a Nutshell: A Desktop Quick Reference](/assets/2022-11-04-java-get-url-from-string/java_book_recommendation_logo.jpg)
+![Java in a Nutshell: A Desktop Quick Reference](/assets/2010-08-15-java-get-url-from-string.md/java_book_recommendation_logo.jpg)
