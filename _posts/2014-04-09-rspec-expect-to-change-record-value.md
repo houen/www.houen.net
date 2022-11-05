@@ -1,3 +1,8 @@
+---
+layout: post
+tags: [ruby, rails, rspec, one-liner]
+---
+
 I want my Ruby on Rails Rspec tests to be as clean and simple as possible. If there is a command in rspec that can test something in one simple line, then I do not want to use two lines.
 
 Here is a real life example I came across today:
