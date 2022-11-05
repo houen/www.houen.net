@@ -30,7 +30,7 @@ What about testing multiple values this way? Say we have two records, and we exp
 expect{ execute }.to change{ [spe1.reload.trashed?, spe2.reload.trashed?] }.from([true, true]).to([false, false])
 ```
 
-Now we are explicitly saying: “Both spe1 and spe2 should change their trashed? value from true to false”. Me like.
+Now we are explicitly saying: “Both spe1 and spe2 should change their trashed? value from true to false”.
 
 ## Book recommendation
 Do you want to have better specs and and easier time programming? I recommend you read [Effective Testing with RSpec 3](https://amzn.to/2STR98c)
