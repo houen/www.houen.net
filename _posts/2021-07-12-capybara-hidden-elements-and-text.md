@@ -2,7 +2,7 @@
 layout: post
 title: Capybara finding and Selecting hidden elements and text
 description: How to use find and select hidden elements and text with Capybara using visible false and any for hidden text elements.
-tags: [kill process, mac, mac osx, process]
+tags: [ruby, rails, testing, capybara]
 ---
 
 ## Finding hidden elements
