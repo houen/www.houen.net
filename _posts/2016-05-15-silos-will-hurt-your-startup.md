@@ -4,7 +4,7 @@ title: Silos will hurt your startup. Friendships will make you strong
 tags: [startup, silos, culture, HR]
 ---
 
-![Silos will hurt your startup](/assets/2016-05-15-silos-will-hurt-your-startup/img.png)
+![Silos will hurt your startup](/assets/2016-05-15-silos-will-hurt-your-startup/silos-will-hurt-your-startup.jpg)
 
 **Update: [Part 2]({% post_url 2016-05-18-your-startup-needs-a-polaroid-wall %}) is now up**. Read this one first, though. There is a link in the bottom as well.
 

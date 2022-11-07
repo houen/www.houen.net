@@ -4,7 +4,7 @@ title: Your startup needs a polaroid wall
 tags: [startup, silos, culture, HR]
 ---
 
-![The Polaroid wall at Crealytics in Berlin](/assets/2016-05-18-your-startup-needs-a-polaroid-wall/crealytics-polaroid-wall-berlin.png)
+![The Polaroid wall at Crealytics in Berlin](/assets/2016-05-18-your-startup-needs-a-polaroid-wall/crealytics-polaroid-wall-berlin.jpg)
 The Polaroid wall at [Crealytics](https://crealytics.com/) in Berlin
 
 Note: This is a follow-up to a post I did on [How Silos are hurting your startup]({% post_url 2016-05-15-silos-will-hurt-your-startup %}). Have you read it already? We will both get more out of this post if you read the other one first. You will get the backstory. I can assume you know it. Win-Win.
