@@ -6,7 +6,7 @@ tags: [startup, silos, culture, HR]
 
 ![Silos will hurt your startup](/assets/2016-05-15-silos-will-hurt-your-startup/silos-will-hurt-your-startup.jpg)
 
-**Update: [Part 2]({% post_url 2016-05-18-your-startup-needs-a-polaroid-wall %}) is now up**. Read this one first, though. There is a link in the bottom as well.
+**Update: [Part 2: Your startup needs a polaroid wall]({% post_url 2016-05-18-your-startup-needs-a-polaroid-wall %}) is now up**. Read this one first, though. There is a link in the bottom as well.
 
 Are you just five people to your startup? I envy you.
 I envy the shared direction you feel with your colleagues. How you feel at one with the vision. You are one entity fighting for a common goal. You can rely on your teammates. They can rely on you. This is a wonderful feeling.

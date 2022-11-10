@@ -5,7 +5,7 @@ layout: post
 tags: [shell, scripts, ruby, rails, programming]
 ---
 
-Bin scripts are an overlooked benfit to a Rails development workflow.
+Bin scripts are an overlooked benefit to a Rails development workflow.
 
 ## Why bin scripts?
 

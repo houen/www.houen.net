@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Ruby: Map an Array to a Hash'
+title: "Ruby: Map an Array to a Hash"
 tags: [code, Ruby, Ruby on Rails]
 ---
 
