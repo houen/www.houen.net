@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ruby: Map an Array to a Hash"
-tags: [code, Ruby, Ruby on Rails]
+tags: [code, ruby, ruby on rails]
 ---
 
 ![ruby-map-array-to-hash](/assets/2014-05-08-ruby-map-array-to-hash/sharp.png)
