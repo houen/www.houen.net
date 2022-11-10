@@ -15,7 +15,7 @@ Heinersdorfer Str. 39
 
 ## Kontakt
 ```
-Email: support@houen.net
+Email: support [at] houen.net
 Web: www.houen.net
 ```
 
