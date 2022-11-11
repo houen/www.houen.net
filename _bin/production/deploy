@@ -26,7 +26,7 @@ git push
 # https://bobcares.com/blog/auto-restart-docker-containers/2/#:~:text=To%20set%20a%20restart%20policy,docker%20daemon%20would%20restart%20it.
 # https://docs.docker.com/engine/reference/run/#restart-policies---restart
 
-jekyll build
+bundle exec jekyll build
 
 # OLD, FOR RPI
 # rsync --recursive --delete _bin/on_rpi_server rpi.houen.net:/home/houen/www.houen.net/bin
