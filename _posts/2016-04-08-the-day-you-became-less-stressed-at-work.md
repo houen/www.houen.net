@@ -58,7 +58,7 @@ Prepare to be _underwhelmed_. My system is insanely simple. That does not mean i
 
 Here it is. It is just a piece of paper. The power lies in the checkboxes.
 
-![Work system paper checklist](/assets/2016-04-08-the-day-you-became-less-stressed-at-work/work-system-paper-cheklist.png)
+![Work system paper checklist](/assets/2016-04-08-the-day-you-became-less-stressed-at-work/work-system-paper-checklist.jpg)
 
 ## The checkboxes
 
