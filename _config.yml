@@ -5,7 +5,9 @@ timezone: Europe/Berlin
 # description: Simple and minimalistic jekyll blogging theme.
 author:
   name: Søren Houen
-  url: https://www.houen.net/about
+  url: https://www.houen.net
+  first_name: Søren
+  last_name: Houen
 #  email: #youremail
 #  twitter: #yourusername
 #  avatar:
@@ -14,7 +16,7 @@ author:
 #   card: summary
 #   creator: #yourusername
 permalink: pretty
-img_url: "https://www.houen.net/assets/images/houen_net_logo_with_plant_400x180.png"
+img_path: "/assets/images/houen_net_logo_with_plant_400x180.png"
 img_width: 400
 img_height: 200
 

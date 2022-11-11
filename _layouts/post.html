@@ -25,9 +25,10 @@ layout: default
       "dateModified": {{ page.last_modified_at | default: page.date | jsonify }},
       "author": {
         "@type": "Person",
-        "name": {{ site.author_name | jsonify }},
-        "givenName": {{ site.author_first_name | jsonify }},
-        "familyName": {{ site.author_last_name | jsonify }},
+        "name": {{ site.author.name | jsonify }},
+        "url": {{ site.author.url | jsonify }},
+        "givenName": {{ site.author.first_name | jsonify }},
+        "familyName": {{ site.author.last_name | jsonify }},
         "email": {{ site.email | jsonify }}
       },
       "publisher": {
@@ -47,7 +48,7 @@ layout: default
       },
       "image": {
         "@type": "ImageObject",
-        "url": "{{ site.url }}{{ page.img_url | default: site.img_url }}",
+        "url": "{{ site.url }}{{ page.img_path | default: site.img_path }}",
         "width": {{ page.img_width | default: site.img_width }},
         "height": {{ page.img_height | default: site.img_height }}
       }
