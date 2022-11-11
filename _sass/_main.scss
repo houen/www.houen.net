@@ -1,3 +1,6 @@
+$primary_color: #000;
+$background_color: #fff;
+
 *, :after, :before {
   box-sizing: border-box;
   background-color: inherit;
@@ -249,4 +252,23 @@ section.post {
 
 section img.logo {
   max-width: 25rem;
+}
+
+.share-page {
+  //text-align: center;
+  background: $background_color;
+  color: $primary_color;
+  padding: 8px 15px;
+  border-radius: 5px;
+  margin: 1.5em 0;
+
+  a {
+    font-weight: 500;
+    color: $primary_color;
+    margin-right: 10px;
+
+    &:hover {
+      border-bottom: 1px dashed $primary_color;
+    }
+  }
 }
