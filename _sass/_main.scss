@@ -236,8 +236,15 @@ section.page {
   }
 }
 
-section.post img {
-  padding: 10px 0 10px 0;
+section.post {
+  img {
+    padding: 10px 0 10px 0;
+  }
+
+  .datestamp {
+    padding: 0px 0 40px 0;
+    font-style: italic;
+  }
 }
 
 section img.logo {
