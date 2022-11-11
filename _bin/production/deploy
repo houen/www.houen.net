@@ -40,6 +40,6 @@ echo ""
 echo ""
 echo "Syncing to simply.com public_html folder. Password: nia"
 echo ""
-rsync -e "ssh -o StrictHostKeyChecking=no -o UpdateHostKeys=no -o UserKnownHostsFile=/dev/null" --recursive --delete _site/ houen.net@linux23.unoeuro.com:public_html/
+rsync -e "ssh -i ~/.ssh/s_at_houen_dot_net_496_rsa -o StrictHostKeyChecking=no -o UpdateHostKeys=no -o UserKnownHostsFile=/dev/null" --recursive --delete _site/ houen.net@linux23.unoeuro.com:public_html/
 echo ""
 echo "[DONE]"
