@@ -1,6 +1,7 @@
 ---
 layout: post
 tags: [google hangout, zoom, HR]
+img_path: "/assets/2013-04-29-permanent-google-hangout-link/permanent-google-hangout-step-1-create-future-event.png"
 ---
 
 ## Background
