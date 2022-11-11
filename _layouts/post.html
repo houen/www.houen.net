@@ -26,7 +26,7 @@ layout: default
       "author": {
         "@type": "Person",
         "name": {{ site.author.name | jsonify }},
-        "url": {{ site.author.url | jsonify }},
+        "url": "{{ site.author.url | jsonify }}",
         "givenName": {{ site.author.first_name | jsonify }},
         "familyName": {{ site.author.last_name | jsonify }},
         "email": {{ site.email | jsonify }}
