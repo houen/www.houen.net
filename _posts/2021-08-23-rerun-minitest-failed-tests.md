@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Rerun Minitest failed tests
+title: "Minitest: Rerun failed tests"
 description: Rerun minitest failed tests easily
 tags: [minitest, ruby, testing]
 redirect_from:

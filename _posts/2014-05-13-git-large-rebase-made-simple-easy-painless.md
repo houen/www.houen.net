@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Git: large rebase made simple, easy and painless"
+title: "Git: Large rebase made simple, easy and painless"
 tags: [git, rebase]
 ---
 

@@ -1,5 +1,6 @@
 ---
 layout: post
+title: "Rspec: Expect To Change Record Value"
 tags: [ruby, ruby on rails, testing, rspec, one-liner]
 ---
 
