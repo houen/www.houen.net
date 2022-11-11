@@ -2,9 +2,6 @@
 layout: post
 title: Kill a program from the Mac OS X terminal command line
 description: To kill program Mac OS X terminal on Leopard / Snow leopard / Lion do the following commands. The program will shut down immediately
-img_path: /assets/2011-10-04-kill-program-mac-os-x-terminal/img.png
-img_width: 381
-img_height: 298
 tags: [kill process, mac, mac osx, process]
 ---
 
