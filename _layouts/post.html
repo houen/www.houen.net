@@ -46,16 +46,15 @@ layout: default
         "@type": "WebPage",
         "@id": "{{ site.url }}{{ page.url }}"
       },
-      "image": "{{ site.url }}{{ page.img_path | default: site.img_path }}",
+      "image": {
+        "@type": "ImageObject",
+        "url": "{{ site.url }}{{ page.img_path | default: site.img_path }}",
+        "width": {{ page.img_width | default: site.img_width }},
+        "height": {{ page.img_height | default: site.img_height }}
+      }
     }
   </script>
 
-<!--      "image": {-->
-<!--        "@type": "ImageObject",-->
-<!--        "url": "{{ site.url }}{{ page.img_path | default: site.img_path }}",-->
-<!--        "width": {{ page.img_width | default: site.img_width }},-->
-<!--        "height": {{ page.img_height | default: site.img_height }}-->
-<!--      },-->
 
 </section>
 
