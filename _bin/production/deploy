@@ -42,4 +42,6 @@ echo "Syncing to simply.com public_html folder. Password: nia"
 echo ""
 rsync -e "ssh -o StrictHostKeyChecking=no -o UpdateHostKeys=no -o UserKnownHostsFile=/dev/null" --recursive --delete _site/ houen.net@linux23.unoeuro.com:public_html/
 echo ""
+echo "Deployed https://www.houen.net"
+echo ""
 echo "[DONE]"
