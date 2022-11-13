@@ -1,7 +1,7 @@
 ---
 layout: post
 tags: [google chrome devtools, javascript]
-title: "Turn off Javscript in Google Chrome using DevTools"
+title: "Turn off Javascript in Google Chrome using DevTools"
 img_path: "/assets/2022-06-16-turn-off-javascript-in-google-chrome-devtools/devtools-command-palette-disable-javascript.png"
 img_width: 509
 img_height: 191
