@@ -18,14 +18,15 @@ body {
   color: rgb(22, 23, 26);
 }
 
-.logo {
-  //display: block;
-  //position: absolute;
-  //top: 10px;
-  //left: 10px;
-  //background: #ffffff;
-  img {
-    max-width: 180px;
+.home {
+  p {
+    margin: .5rem 0;
+  }
+  
+  img.logo {
+    //max-width: 180px;
+    padding: 0;
+    //max-width: 25rem;
   }
 }
 
@@ -248,10 +249,6 @@ section.post {
     padding: 0px 0 40px 0;
     font-style: italic;
   }
-}
-
-section img.logo {
-  max-width: 25rem;
 }
 
 .share-page {
