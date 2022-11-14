@@ -7,9 +7,6 @@ dt=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
 # Update TOCs
 _bin/dev/doctoc
 
-# Pull includes from internet
-#wget -O _posts/assets/2021-08-23-minitest-rerun-failed-tests/failed_tests_reporter.rb https://raw.githubusercontent.com/houen/minitest-rerun-failed/master/lib/minitest_rerun_failed/failed_tests_reporter.rb
-
 git add .
 git commit -am "deploy on $dt" || echo "Up-to-date. Nothing to commit"
 git push
