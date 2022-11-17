@@ -8,11 +8,11 @@ img_width: 393
 img_height: 73
 ---
 
+![Ruby regex capture groups using scan](/assets/2022-11-16-ruby-regex-capture-group-to-variable/regex-capture-using-scan.png)
+
 Like most Ruby / Rails developers, I use Regular Expressions a lot in my work. When doing so I often forget the different options I have for getting regex capture groups into variables. So here are the best ones:
 
 ## Using `match` - easy, but only returns a single captured group
-
-![Ruby regex capture groups using match](/assets/2022-11-16-ruby-regex-capture-group-to-variable/regex-capture-using-match.png)
 
 This method excels in its simplicity. Another benefit is the `.captures` method of accessing the capture groups. With this and the safety operator (`&.`) we can easily handle the case where no match is found.
 
@@ -23,8 +23,6 @@ This method excels in its simplicity. Another benefit is the `.captures` method 
 ```
 
 ## Using `scan` - returns all matched groups as an array
-
-![Ruby regex capture groups using scan](/assets/2022-11-16-ruby-regex-capture-group-to-variable/regex-capture-using-scan.png)
 
 I tend to prefer `match` to scan mostly out of habit, but `scan` offers two good benefits:
 - Returns all capture groups, whereas `match` returns only one
