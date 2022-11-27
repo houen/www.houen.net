@@ -2,7 +2,7 @@
 layout: post
 title: "Ruby: Solving mini_racer and libv8-node bundle ERROR: Failed to build gem native extension"
 description: "Solving the Ruby mini_racer / libv8-node error when trying to bundle install"
-tags: [ruby, bundle, libv8]
+tags: [ruby, bundler, mini_racer, libv8]
 img_path: /assets/2022-11-27-mini-racer-libv8-node-bundle-error-native-extensions/mini-racer-libv8-node-bundle-error-native-extensions.jpg
 img_width: 393
 img_height: 73
