@@ -28,3 +28,6 @@ Sidey is a simple and minimalistic jekyll blogging theme.
 ### Screenshot
 
 ![Screenshot](screenshot.png)
+
+### Inspiration
+- Great title: "Lies, Damn Lies, and the State of Testing in Rails"
