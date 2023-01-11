@@ -10,7 +10,7 @@ img_height: 232
 
 ![Google Chrome Reading shown in menu on an Android phone](/assets/2023-01-11-enable-and-add-to-chrome-reading-list-on-android/add_to_reading_list_in_chrome_android_menu.jpg)
 
-I use the reading list on Google Chrome more and more often. When I do not, I find myself keeping too many tabs open in order to "close-read them later".
+I use the reading list on Google Chrome more and more often. When I do not, I find myself keeping too many tabs open in order to "read them later".
 However, the feature seems to be missing on mobile, making it not that useful to me. But with 5 minutes of work, we can enable it on our Android phones.
 
 ## Enable Reading List on Android
