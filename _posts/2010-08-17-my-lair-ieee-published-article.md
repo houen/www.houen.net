@@ -1,7 +1,8 @@
 ---
 title: 'My LAIR IEEE published article'
 layout: post
-tags: [IEEE, ICSC, article]
+tags: [meta]
+robots: noindex, follow
 ---
 
 Okay – this will be the last repost of stuff from my old blog:
