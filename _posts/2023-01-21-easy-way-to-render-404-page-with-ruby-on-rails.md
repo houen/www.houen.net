@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
   # ...
   
   def error_not_found
-    render '/application/errors/404', status: :not_found
+    render '/application/errors/404', status: :not_found, formats: [ :html ]
   end
   
   # ...

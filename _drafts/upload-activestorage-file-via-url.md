@@ -1,7 +1,7 @@
 ---
 title: 'Rails: How to upload a file or image to ActiveStorage via URL'
 layout: post
-tags: [Rails, ActiveStorage]
+tags: [ruby on rails, activeStorage, quick tips]
 ---
 
 ```ruby
