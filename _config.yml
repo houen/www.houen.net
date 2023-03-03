@@ -52,7 +52,7 @@ collections:
     permalink: /:name
   posts:
     output: true
-    permalink: /:slug/
+    permalink: /:slug
   
 defaults:
   -
