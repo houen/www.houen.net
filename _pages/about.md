@@ -13,10 +13,8 @@ My name is Søren. I am man from Denmark now living in Berlin with my wife and d
 - Relationship: Married, one child
 - Education: MsC Computer Science from [University of Copenhagen](https://studies.ku.dk/masters/computer-science/), Denmark
 - Spoken languages: English (fluent), German (C1), Danish (native)
-- Profession: Software Engineer, 16 years
+- Profession: Software Engineer for {{Time.now.year - 2005}} years
 - Current position: CTO at Autoplenum GmbH <br> ([autoplenum.de](https://www.autoplenum.de), [12neuwagen.de](https://www.12neuwagen.de), [12gebrauchtwagen.de](https://www.12gebrauchtwagen.de))
-- Other projects: 
-  - [boothcomp.com](https://boothcomp.com), a conference booth configurator for booth builders to use.
 
 ## Links
 - LinkedIn profile: [View](https://www.linkedin.com/in/shouen)
