@@ -6,10 +6,10 @@ permalink: /
 robots: noindex, follow
 ---
 
-## Welcome
+# Søren Houen
 
 On this site you can find: 
-- [Basic info about me (Søren)]({% link _pages/about.md %}).
+- [Basic info about me]({% link _pages/about.md %}).
 - Things I [blog about](/blog). Mostly software engineering.
 - My thoughts on [ways to work well in software engineering](/work-guide)
 - [Books](/books) i recommend reading
