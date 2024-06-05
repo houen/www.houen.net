@@ -109,9 +109,13 @@ So why is it like this? A couple of reasons:
 ##### Engineers must fit all business cases and code in their head
 When an engineer needs to change something about a codebase, they first need to wrap their head around all the business cases and code points they will be touching.
 
-As an example: Say we are changing a user signup flow. We already have a "welcome" email. Now we also want to add a "reminder" email to be sent in case they have not completed their profile 7 days after creating their account.
+As an example: Say we are changing a user signup flow. 
+We already have a "welcome" email. 
+Now we also want to add a "reminder" email to be sent in case they have not completed their profile 7 days after creating their account.
 
-Okay. We need to add a scheduled job with code to check whether a users profile is completed. This job should be scheduled for 7 days after account creation. If the profile is not complete, it should send an email following a template. Here's the Gherkin code for it:
+Okay. We need to add a scheduled job with code to check whether a users profile is completed. 
+This job should be scheduled for 7 days after account creation. 
+If the profile is not complete, it should send an email following a template. Here's the Gherkin code for it:
 
 > Feature: Reminder email\
 > Given I have created a user account\
@@ -121,9 +125,11 @@ Okay. We need to add a scheduled job with code to check whether a users profile 
 
 Fair enough. We code it, write tests for it, deploy it, get it signed off on. Done.
 
-Now comes the next feature: There should be an "admin" type user, which can manage a subset of users under their company umbrella. For this we need to add a user role field, and the back office admin section for this new user type.
+Now comes the next feature: There should be an "admin" type user, which can manage a subset of users under their company umbrella. 
+For this we need to add a user role field, and the back office admin section for this new user type.
 
-However, admin users should not receive a reminder email. So on top of the features we need to add, we need to change the existing reminder email feature:
+However, now comes the requirement: _admin users should not receive a reminder email_. 
+So on top of the features we need to add, we need to change the existing reminder email feature:
 
 > Feature: Reminder email\
 > Given I have created a user account\
@@ -138,17 +144,30 @@ It is a small change, but it still needs doing. Someone needs to  think of it. S
 - Risk: While implementing the admin user, the engineers might introduce a new bug in the reminder email system.
 - Risk: Any future emails now possibly need to distinguish between user roles.
 
-Now say we introduce a new email "reminder 2" which is only for non-admin users. This one will also need to take admins into account.
+Now say we introduce a new email "activity for users you manage" which is only for admin users. 
+This one will also need to take admins into account.
 
-Then we add a new user type, accounting, which should also not get the "regular user" emails. Now we need to expand the if-statements in both the "reminder" and "reminder 2" emails.
+Then we add a new user type, accounting, which should not get the "regular user" emails, but should get the
+"activity for users you manage" email.
+Now we need to expand the if-statements in both the "reminder" and "users you manage" emails.
 
-The first feature was just the cost of implementing that single one. The second feature had two necessary changes in order to implement one feature. The third also two. The third one was touching the logic of both the email features. It required three changes.
+The first feature was just the cost of implementing that single one. 
+The second feature had two necessary changes in order to implement one feature. 
+The third one was touching the logic of both the email features. It required three changes.
 
-The work required for each feature quickly grows in complexity the more features we add. The interactions between them get more and more complicated. Changes become increasingly costly. At some point, a feature will have so many interactions that adding one costs double the time (salary) of implementing it, had there been less features in the system.
+The work required for each feature quickly grows in complexity the more features we add. 
+The interactions between them get more and more complicated. Changes become increasingly costly. 
+At some point, a feature will have so many interactions that adding one costs double the time (salary) of implementing it, 
+had there been less features in the system.
+
+This brings up the main point:
 
 > Every time you decide to add a feature you are choosing to not add a different future feature.
 
-Of course, you can throw more engineers at it, but this will also increase the overhead of collaboration and management. With enough people, you will at some point need to split into multiple services. This again adds an amazing amount of overhead. Thus, hiring more engineers is a patch-job, not a perfect solution. For more on this, see the book [The mythical man-month](/books).
+Of course, you can throw more engineers at it, but this will also increase the overhead of collaboration and management. 
+With enough people, you will at some point need to split into multiple services. 
+This again adds an amazing amount of overhead. Hiring more engineers is a patch-job, not a perfect solution. 
+For more on this, see the book [The mythical man-month](/books).
 
 
 ### Track feature value
