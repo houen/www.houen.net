@@ -1,25 +1,64 @@
-# Thoughts on Testing
+# Thoughts on Rails Testing
 
-## What to test
-
-### Test the real thing as much as possible
+## Test the real thing as much as possible
 We test to make sure the user gets a good experience and the company keeps making money. Anything else is just extra.
 
-- System tests (integration tests in Rails 5.x) are what counts.
-- We do not test controllers unless it makes sense to do so. And it almost never does.
-- We do not unit test everything.
-  - Unit tests should be used where they make sense, but are essentially just a help for us programmers. A unit test cannot replace a system test.
-  - Once more for emphasis: _Only a system test sufficiently proves that something works._
+- System tests (integration tests in earlier Rails versions) are what counts.
+- Do not test controllers unless it makes sense to do so. And it almost never does.
+- Do not unit test everything.
+  - Unit tests should be used where they make sense, but are essentially just a help for us programmers.
+  - A unit test cannot replace a system test.
+- Caveat: Core code should be extensively unit tested. See below.
 
 ### Core code should be extensively unit tested
-What makes sense to always unit test is something core to the business. For instance that a Clickout requires either a `cpc` or `cpl + clicks_per_lead` should be unit tested. Because if this fails we might lose a lot of money without realising it. The last part is important. If a bug somewhere would only affect a few % of users and would be caught by system tests, it does not need extensive unit testing. But if something would be both silent and deadly, it should be massively unit tested.
+What makes sense to always unit test is something _core_ to the business. Most often this will be something involving money. 
+The reason for doing so is to make double-sure these parts do not break. System tests plus unit tests.
+
+When I first started in hobby electronics, we learned an iron-clad rule. _Always turn off the power twice_.
+Before tinkering inside something with voltage that can kill you, you turn off the switch. Then you also unplug the device. Double safety.
+You have to forget twice.
+
+This made so much sense it stuck with me ever since.
+
+We should do the same for the programming paths that cannot go wrong, ever.
+We do this by both system testing and unit testing. 
+
+> If it is dangerous, make double sure. In programming, this means system and unit tests.
+
+For instance that a Clickout requires either a `cpc` or `cpl + clicks_per_lead` should be unit tested. Because if this fails we might lose a lot of money _without realising it_. 
+The "without realising it" part is important. 
+
+If a bug somewhere would only affect a few percent of users and would be caught by system tests, it does not need extensive unit testing.
+
+If a bug somewhere would be caught and fixed immediately, system testing is enough.
+
+But if something would be both silent and deadly, it should be _massively_ unit tested.
+
+### Only a system test sufficiently proves that something works
+This is perhaps quite controversial, and everything should be taken with a grain of salt. 
+The longer I work in programming, the more often the answer is "it depends".
+
+However, we employ this "rule" because no ~~user~~ customer will ever care about your unit tests. 
+A user does not give a crap whether all your unit tests are passing or running very fast. 
+They care whether your product works. 
+And system testing what is important to the customer is the safest way to ensure they are happy with your product. 
+And then your bosses will be happy. And hopefully they will make you happier as a result. If not, better find another job. 
+
+> Happy customers == happy bosses == happy programmers
+
+### Focusing on unit tests allows for radical code changes
+
+
+Once more for emphasis:
+> Only a system test sufficiently proves that something works.
 
 ### Test is code. Code is debt
 Tests are code. Code that must be maintained. Code that must be adapted to react to change. Every line of code we add makes it slower to add future lines due to code complexity.
 
-So more tests == slower development. For this reason we should keep our tests as lean as possible. Anything important should be tested. But only once and as efficiently as possible.
+So **more tests leads to slower development**. 
 
-Note that efficiently here does not mean how fast a test runs, but rather:  
+For this reason we should keep our tests as lean as possible. Anything important should be tested. But only once and as efficiently as possible.
+Note that efficiently here does not mean how fast a test runs. 
 
 ### Efficient Tests
 How efficient a test is is a factor of:
@@ -27,14 +66,14 @@ How efficient a test is is a factor of:
 - How well it covers the business case it protects.
 - How well it communicates the business case it protects.
 - How easy the test is to understand as a developer.
-- Short and simple beats long and clever (clever == complicated).
+- How easy the test is to understand as a _new developer on the project_.
+- Short and simple beats long and clever. 
+  - Clever == Complicated == hard to understand == _BAD TEST_.
 - How effectively the test helps to pinpoint what went wrong when things go wrong
-  - Good: test "offer title starts with make name"
-  - Less optimal: test "display ads have correct content"
-  - How fast it is to adapt the test when the business requirement changes
-    - And it _will_ change. The only constant is change.
-
-
+  - Good: `test "offer title starts with the car make name"`
+  - Bad: `test "offers have correct content"`
+- How fast it is to adapt the test when the business requirement changes
+  - And it _will_ change. The only constant is change.
 
 See "A good test" section below for an example of a test that does the above.
 
@@ -45,7 +84,8 @@ See "A good test" section below for an example of a test that does the above.
 We use Minitest for testing.
 We use `test "xyz does x" do` blocks for describing tests. No describe or context.
 
-The above can take a little getting used to if one comes from an rspec background like I did. However, I think you will find this a very comfortable test flow after a while. I for one have not missed rspec in years.
+The above can take a little getting used to if one comes from an rspec background like I did. However, I think you will find this a very comfortable test flow after a while. 
+I used to be a die-hard rspec fan. But by now I have not missed rspec in several years.
 
 ### Test focus
 
@@ -53,13 +93,13 @@ A test should have a clear focus: Set up the test state and then assert things t
 
 A tiny test that asserts just one thing is best. The only reason to assert more at once is test run performance. This is a tradeoff. But one where we strongly prefer more focused tests.
 
-Currently a lot of the old tests try to test waaay too much in a single test. We prefer testing only things that belong together.
+A lot of legacy tests try to test waaay too much in a single test. We prefer testing only things that belong together.
 
-### Writing Readable Tests
+## Writing Readable Tests
 
-A test will be written once, and then read and adapted many times. Help future you or me. Take the time to make the tests ready to read and understand.
+A test will be written once, and then read and adapted many times. Help future you or future me. Take the time to make the tests ready to read and understand.
 
-#### Given / When / Then
+### Given / When / Then
 
 Avdi Grimm had written and talked about a great concept: [Confident Code](https://www.youtube.com/watch?app=desktop&v=T8J0j2xJFgQ&themeRefresh=1).
 
@@ -67,7 +107,7 @@ Translated to testing, this means following cumber's _Given_ / _When_ / _Then_ f
 
 For small tests these can be just separated by black lines. Note that Setup is not the same as the setup code block. It could be, but that is just a part of the setup phase shared by all tests in that test class.
 
-#### Example:
+### Example:
 
 See the implicit Given / When / Then blocks in the below test:
 

@@ -10,6 +10,10 @@ gem 'jekyll-sitemap'
 gem "rouge"
 gem "webrick"
 
+# For multi-cache
+gem "rails"
+gem "dalli"
+
 # If you have any plugins, put them here!
 group :jekyll_plugins do
   #   gem "jekyll-feed"
