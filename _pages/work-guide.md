@@ -48,11 +48,11 @@ I try to use these as principles to help me do better work.
 ## Coding
 
 - [Get to the first production version with as little effort as possible]({% post_url 2025-05-22-work-guide-revisited-first-version-fast-as-possible %})
-
+- [Automate first when you have to]({% post_url work_guide/2025-05-22-automate-first-when-you-have-to %})
 
 ## Product
 
-### Automate first when you need to
+### Automate first when you have to
 
 > For tech companies, building things without knowing if it is really what your customers need is in my opinion one of the largest contributors to slowing down of development and eventual company death.
 
