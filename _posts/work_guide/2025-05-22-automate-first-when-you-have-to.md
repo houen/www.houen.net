@@ -16,7 +16,7 @@ Teams can be heavily slowed down by building the wrong thing. If it takes 5 hour
 
 The longer you wait to build something, the better you understand *what to build* and *how to build it*.
 
-### The cost of features
+## The cost of features
 The cost of developing a feature is not as simple as just building it. Of course the cost varies from feature to feature.
 But we can get a basic feel for the cost by looking at the people involved.
 
@@ -35,7 +35,7 @@ For each feature, the company will be paying:
 
 There are a *lot* of people involved in building each feature! And this is how it looks like in most medium-to-large software companies following modern Agile principles. This is the lean version!
 
-And the above is only considering the up-front cost of building the feature. After that comes the long tail engineering cost.
+And the above is only considering the up-front cost of building the feature. After that comes [the long tail engineering cost]({% post_url work_guide/2025-05-22-the-long-tail-engineering-cost-of-features %}).
 
 > **Revisiting my work guide.**
 > I have been working on a work guide for a while now. That is an understatement. I started it in 2011. Then I left it to sit for many years. I will try to revisit it again now in little bite-sized posts.

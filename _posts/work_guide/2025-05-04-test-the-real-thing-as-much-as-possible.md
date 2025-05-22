@@ -8,7 +8,6 @@ date: 2025-05-04 12:50 +0200
 
 > This is part 1 of a series on testing.
 
-## Test the real thing as much as possible
 We test to make sure the user gets a good experience and the company keeps making money. Anything else is just extra.
 
 - System tests (integration tests in earlier Rails versions) are what counts.
