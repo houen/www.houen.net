@@ -76,4 +76,4 @@ This means I can change whatever I want about the underlying code without the te
 
 > **Revisiting my work guide.**
 > I have been working on a work guide for a while now. That is an understatement. I started it in 2011. Then I left it to sit for many years. I will try to revisit it again now in little bite-sized posts.
-> This is Part 1 of the work guide. Click the "work guide" link below for all parts.
+> Click the "work guide" link below for more.
