@@ -14,12 +14,7 @@ I try to use these as principles to help me do better work.
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ### Table of Contents
 
-- [Coding](#coding)
-  - [Get to the first production version with as little effort as possible](#get-to-the-first-production-version-with-as-little-effort-as-possible)
 - [Product](#product)
-  - [Automate first when you need to](#automate-first-when-you-need-to)
-  - [The cost of features](#the-cost-of-features)
-  - [The long tail engineering cost of features](#the-long-tail-engineering-cost-of-features)
   - [Track feature value](#track-feature-value)
 - [Collaboration](#collaboration)
   - [Ubiquitous language](#ubiquitous-language)
