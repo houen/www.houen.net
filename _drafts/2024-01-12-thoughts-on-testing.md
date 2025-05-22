@@ -4,14 +4,14 @@
 We test to make sure the user gets a good experience and the company keeps making money. Anything else is just extra.
 
 - System tests (integration tests in earlier Rails versions) are what counts.
-- Do not test controllers unless it makes sense to do so. And it almost never does.
+- Do not test controllers unless it makes sense to do so. It almost only does for APIs.
 - Do not unit test everything.
   - Unit tests should be used where they make sense, but are essentially just a help for us programmers.
   - A unit test cannot replace a system test.
 - Caveat: Core code should be extensively unit tested. See below.
 
 ### Core code should be extensively unit tested
-What makes sense to always unit test is something _core_ to the business. Most often this will be something involving money. 
+What makes sense to always unit test is something _core_ to the business. Most often this will be something involving money.
 The reason for doing so is to make double-sure these parts do not break. System tests plus unit tests.
 
 When I first started in hobby electronics, we learned an iron-clad rule. _Always turn off the power twice_.
@@ -21,12 +21,13 @@ You have to forget twice.
 This made so much sense it stuck with me ever since.
 
 We should do the same for the programming paths that cannot go wrong, ever.
-We do this by both system testing and unit testing. 
+Code where small errors are devastating and not easily spotted. Financial calculations are a good example. How much to charge customers for example.
+We do this by both system testing and unit testing.
 
 > If it is dangerous, make double sure. In programming, this means system and unit tests.
 
-For instance that a Clickout requires either a `cpc` or `cpl + clicks_per_lead` should be unit tested. Because if this fails we might lose a lot of money _without realising it_. 
-The "without realising it" part is important. 
+For instance that a Clickout requires either a `cpc` or `cpl + clicks_per_lead` should be unit tested. Because if this fails we might lose a lot of money _without realising it_.
+The "without realising it" part is important.
 
 If a bug somewhere would only affect a few percent of users and would be caught by system tests, it does not need extensive unit testing.
 
@@ -35,30 +36,41 @@ If a bug somewhere would be caught and fixed immediately, system testing is enou
 But if something would be both silent and deadly, it should be _massively_ unit tested.
 
 ### Only a system test sufficiently proves that something works
-This is perhaps quite controversial, and everything should be taken with a grain of salt. 
+This is perhaps quite controversial, and everything should be taken with a grain of salt.
 The longer I work in programming, the more often the answer is "it depends".
 
-However, we employ this "rule" because no ~~user~~ customer will ever care about your unit tests. 
-A user does not give a crap whether all your unit tests are passing or running very fast. 
-They care whether your product works. 
-And system testing what is important to the customer is the safest way to ensure they are happy with your product. 
-And then your bosses will be happy. And hopefully they will make you happier as a result. If not, better find another job. 
+However, we employ this "rule" because no ~~user~~ customer will ever care about your unit tests.
+A user does not give a crap whether all your unit tests are passing or running very fast.
+They care whether your product works.
+And system testing what is important to the customer is the safest way to ensure they are happy with your product.
+And then your bosses will be happy. And hopefully they will make you happier as a result. If not, better find another job.
 
 > Happy customers == happy bosses == happy programmers
-
-### Focusing on unit tests allows for radical code changes
-
 
 Once more for emphasis:
 > Only a system test sufficiently proves that something works.
 
+
+### Focusing on system tests allows for radical code changes
+If a systems tests are too low-level, they must be changed with every little code change. But if a test is essentially:
+
+```
+As a new visitor
+When I visit /products/books
+And I click the product "Easy testing for all"
+Then I should see the 1 item in my shopping cart badge
+And I should see a total cart price of 15 EUR
+```
+
+The above "test" is high-level. I can changes any of the underlying parts without the test breaking. The test does not care How I calculate that cart price total, only that it is correct.
+
 ### Test is code. Code is debt
 Tests are code. Code that must be maintained. Code that must be adapted to react to change. Every line of code we add makes it slower to add future lines due to code complexity.
 
-So **more tests leads to slower development**. 
+So **more tests leads to slower development**.
 
 For this reason we should keep our tests as lean as possible. Anything important should be tested. But only once and as efficiently as possible.
-Note that efficiently here does not mean how fast a test runs. 
+Note that efficiently here does not mean how fast a test runs.
 
 ### Efficient Tests
 How efficient a test is is a factor of:
@@ -67,7 +79,7 @@ How efficient a test is is a factor of:
 - How well it communicates the business case it protects.
 - How easy the test is to understand as a developer.
 - How easy the test is to understand as a _new developer on the project_.
-- Short and simple beats long and clever. 
+- Short and simple beats long and clever.
   - Clever == Complicated == hard to understand == _BAD TEST_.
 - How effectively the test helps to pinpoint what went wrong when things go wrong
   - Good: `test "offer title starts with the car make name"`
@@ -84,7 +96,7 @@ See "A good test" section below for an example of a test that does the above.
 We use Minitest for testing.
 We use `test "xyz does x" do` blocks for describing tests. No describe or context.
 
-The above can take a little getting used to if one comes from an rspec background like I did. However, I think you will find this a very comfortable test flow after a while. 
+The above can take a little getting used to if one comes from an rspec background like I did. However, I think you will find this a very comfortable test flow after a while.
 I used to be a die-hard rspec fan. But by now I have not missed rspec in several years.
 
 ### Test focus
@@ -138,13 +150,13 @@ We call this the happy path. Always start by testing the happy path - what we wa
 
 **Being negative is good - in moderation**
 
-The users and data providers can sometimes provide incomplete or outright wrong data. 
+The users and data providers can sometimes provide incomplete or outright wrong data.
 It is good to build tests that ensure the app works correctly with such input. However, be careful not to overdo negative testing.
 
-When testing the Sad Path, be sure to think about what is likely to go wrong. What do we expect to go wrong? 
-A canonical example would be a user forgetting to input a dot in their email. 
-For this reason we test that the system rejects wrong emails. 
-However, testing for every type of wrong email we can dream of, would be going too far. 
+When testing the Sad Path, be sure to think about what is likely to go wrong. What do we expect to go wrong?
+A canonical example would be a user forgetting to input a dot in their email.
+For this reason we test that the system rejects wrong emails.
+However, testing for every type of wrong email we can dream of, would be going too far.
 Test the happy path, and test that we guard against the Sad Path.
 
 Be just negative enough to ensure a good user experience. This is our key goal.
@@ -216,16 +228,16 @@ Comments below.
 ```ruby
 should 'display proper text content' do
     DriverHelper.use_javascript_driver
-    
+
     visit '/stadt'
-    
+
     breadcrumbs       = all('.breadcrumbs li').collect(&:text)
     breadcrumbs_links = all('.breadcrumbs li a').collect { |link| link['href'] }
-    
+
     assert_equal 'Startseite', breadcrumbs[0]
     assert_url_match '/', breadcrumbs_links[0]
     assert_equal 'Gebrauchtwagen in Deiner Stadt suchen und vergleichen', breadcrumbs[1]
-    
+
     assert_equal 'Entdecke alle Gebrauchtwagen in deiner Stadt! Schnell vergleichen ✔ Komfortabel ✔ Günstigste Angebote ✔ täglich alle neuen Gebrauchtwagen in deiner Stadt vergleichen ✔', find('meta[name="description"]', visible: false)['content']
     assert_equal 'Alle Gebrauchtwagen in Deutschland auf einen Blick | 12Gebrauchtwage...', page.title
     assert_equal 'noindex,follow', find('meta[name="robots"]', visible: false)['content']
@@ -233,7 +245,7 @@ should 'display proper text content' do
     assert_equal 'Gebrauchte Autos in Großstädten', find('h2').text
     assert_equal 'Wähle eine Stadt und gelange direkt zu den aktuellen Gebrauchtwagen-Angeboten in der Nähe.', find('h3').text
     assert_equal 'Gebrauchte Autos auch in Deiner Stadt:', find('.zip-code-search .heading-small').text
-    
+
     # have 2 small search form with zip code
     # - search widget with zip code
     within('.small-search-with-zip') do
@@ -243,8 +255,8 @@ should 'display proper text content' do
       find('button[type="submit"]').click
       assert_equal 'Gebrauchtwagen in Übersee | 12Gebrauchtwagen.de', page.title
     end
-    
-    
+
+
     visit '/stadt'
     # - search widget only zip code
     within('.zip-code-search') do
@@ -271,8 +283,8 @@ This test has so many issues it is not even funny.
   - Cities box CTA button text and AJAX
   - Cities box links to cities page
   - Cities page:
-    - Header 
-    - Custom zip code input box CTA button label 
+    - Header
+    - Custom zip code input box CTA button label
     - Custom zip code input box CTA link
 
 **The test sets up _six_ different states:**
@@ -291,7 +303,7 @@ within('.small-search-with-zip') do
 fill_in('s[zip]', with: '88662')
 ```
 
-Contrast that with these helpers: 
+Contrast that with these helpers:
 
 - `set_search_filter(:make, 'Audi')`
 - `set_search_filter(:zip_code, '13086').`

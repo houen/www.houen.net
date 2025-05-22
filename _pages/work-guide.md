@@ -6,7 +6,7 @@ permalink: /work-guide/
 ---
 
 <!-- https://guides.github.com/features/mastering-markdown/ -->
-This is a collection of thoughts and ideas I have had or come across while working in software engineering and startups. 
+This is a collection of thoughts and ideas I have had or come across while working in software engineering and startups.
 
 I try to use these as principles to help me do better work.
 
@@ -47,14 +47,7 @@ I try to use these as principles to help me do better work.
 
 ## Coding
 
-### Get to the first production version with as little effort as possible
-
-Right now I may *think* I know what I am doing. However, I really do not. For this reason, I should get to the first version with as little effort as possible. This means I should not waste time on clever code.
-
-Get to the first version with as little effort as possible.
-
-#### As simple code as possible (simple beats DRY)
-Simple code beats clever code - this is doubly true for the first version! Clever code may be easier to extend / adapt, but it is harder to *fundamentally* change. The likelihood is very high that I will have to fundamentally change the first version of any project.
+- [Get to the first production version with as little effort as possible]({% post_url 2025-05-22-work-guide-revisited-first-version-fast-as-possible %})
 
 
 ## Product
@@ -73,7 +66,7 @@ The longer you wait to build something, the better you understand *what to build
 
 ### The cost of features
 The cost of developing a feature is not as simple as just building it. Of course the cost varies from feature to feature.
-But we can get a basic feel for the cost by looking at the people involved. 
+But we can get a basic feel for the cost by looking at the people involved.
 
 For each feature, the company will be paying:
 
@@ -102,9 +95,9 @@ If something takes 40 hours for engineering to build, one might think "ah, we on
 - Customer support
 - New developers learning about the feature during onboarding
 
-These are all small at first, but they add up over time. The real killer is the code complexity. 
+These are all small at first, but they add up over time. The real killer is the code complexity.
 
-> For every feature you add you are increasing the cost of *new features as well as maintaining the ones you already have*. 
+> For every feature you add you are increasing the cost of *new features as well as maintaining the ones you already have*.
 
 This relationship is not linear. It gets more and more expensive with each feature added.
 
@@ -115,7 +108,7 @@ This relationship is not linear. It gets more and more expensive with each featu
 
 [//]: # (When an engineer needs to change something about a codebase, they first need to wrap their head around all the business cases and code points they will be touching.)
 
-As an example: Say we are changing a user signup flow. 
+As an example: Say we are changing a user signup flow.
 
 We want to add a "reminder" email to be sent in case they have not completed their profile 7 days after creating their account.
 
@@ -123,8 +116,8 @@ I will illustrate this by writing very simple Gherkin code (standardised way of 
 Expect application code to normally grow at least as much in complexity as the tests.
 
 #### First feature
-Okay. We need to add a scheduled job with code to check whether a users profile is completed. 
-This job should be scheduled for 7 days after account creation. 
+Okay. We need to add a scheduled job with code to check whether a users profile is completed.
+This job should be scheduled for 7 days after account creation.
 If the profile is not complete, it should send an email following a template. Here's the Gherkin code for it:
 
 > Feature: Reminder email\
@@ -136,11 +129,11 @@ If the profile is not complete, it should send an email following a template. He
 Fair enough. We code it, write tests for it, deploy it, get it signed off on. Done.
 
 #### Second feature
-Now comes the next feature: There should be an "admin" type user, which can manage a subset of users under their company umbrella. 
+Now comes the next feature: There should be an "admin" type user, which can manage a subset of users under their company umbrella.
 
 For this we need to add a user role field, and the back office admin section for this new user type.
 
-However, now comes the requirement: _admin users should not receive a reminder email_. 
+However, now comes the requirement: _admin users should not receive a reminder email_.
 So on top of the features we need to add, we need to change the existing reminder email feature:
 
 > Feature: **Regular** users receive reminder email\
@@ -194,8 +187,8 @@ Here comes the new Gherkin:
 > And I am an accountant user\
 > Then I should not receive a reminder email to complete my profile\
 
-- The first feature was just the cost of implementing that single one. 
-- The second feature had two necessary changes in order to implement one feature. 
+- The first feature was just the cost of implementing that single one.
+- The second feature had two necessary changes in order to implement one feature.
 - The third feature also had two necessary changes for one feature.
 
 #### Fourth feature
@@ -213,11 +206,11 @@ Now this becomes our new Gherkin. To keep it short, I just include the feature n
 What happened? We had just gotten used to one feature requiring two changes. Now, one feature required three changes!
 
 > The relationship between number of feature and effort required is not linear.
-> It is a slowly growing exponential curve. 
+> It is a slowly growing exponential curve.
 
-The work required for each feature quickly grows in complexity the more features we add. 
-The interactions between them get more and more complicated. Changes become increasingly costly. 
-At some point, a feature will have so many interactions that adding one costs 2x, 3x, or 5x the time (salary) of implementing it, 
+The work required for each feature quickly grows in complexity the more features we add.
+The interactions between them get more and more complicated. Changes become increasingly costly.
+At some point, a feature will have so many interactions that adding one costs 2x, 3x, or 5x the time (salary) of implementing it,
 had there been less features in the system.
 
 Here is the full final Gherkin of the four features:
@@ -263,10 +256,10 @@ Here is the full final Gherkin of the four features:
 > When 7 days have passed\
 > Then I should not receive an email with the status of my assigned users\
 
-We see that even with these little tiny features, we **massively** grew the complexity of our tests. 
+We see that even with these little tiny features, we **massively** grew the complexity of our tests.
 And you can expect the application code to grow similarly.
 
-And these were just teeny, tiny, very simple and easy-to-understand features. 
+And these were just teeny, tiny, very simple and easy-to-understand features.
 Most of the time features are much more complex, with many more interactions.
 
 This brings up the main point:
@@ -276,16 +269,16 @@ This brings up the main point:
 Knowing this would you like to introduce _just one little feature_ to the application without verifying its value?
 
 #### Note: More engineers is **not** a solution
-Of course, you can throw more engineers at it, but this will also increase the overhead of collaboration and management. 
-With enough people, you will at some point need to split into multiple services. 
-This again adds an amazing amount of overhead. Hiring more engineers is a patch-job, not a perfect solution. 
+Of course, you can throw more engineers at it, but this will also increase the overhead of collaboration and management.
+With enough people, you will at some point need to split into multiple services.
+This again adds an amazing amount of overhead. Hiring more engineers is a patch-job, not a perfect solution.
 For more on this, see the book [The mythical man-month](/books).
 
 
 ### Track feature value
 From the hidden cost of long-tail maintenance we see the cost of maintaining a feature in your product. We know a feature costs money, and the more features you build, the more each feature costs.
 
-Because of this it is important to track the performance of your features. By tracking them we can remove those that do not perform.  
+Because of this it is important to track the performance of your features. By tracking them we can remove those that do not perform.
 
 To track performance, first we must try to quantify how much true business value a feature is bringing in.
 Did you change the way the signup process works - how did that affect drop-off rate during signups?
@@ -297,9 +290,9 @@ The best way to get data on which features are performing is with raw analytics 
 - Start a funnel from this new CTA button, and see how it performs. How many people drop off in the funnel? Do they come back? How does this compare with the other funnels? Would it be better to let the customer explore the page longer before showing them a CTA button?
 
 #### Tracking non-trackable features
-Sometimes, there is no simple or hard-and-fast way to measure a features performance. But we must still make an effort to try. At least make it a regular topic in the regular product meetings. 
+Sometimes, there is no simple or hard-and-fast way to measure a features performance. But we must still make an effort to try. At least make it a regular topic in the regular product meetings.
 
-Just opening a conversation around "how is feature x, y and z performing? *And how do we know they are performing this way*" will improve your product pipeline. The last part is very important. 
+Just opening a conversation around "how is feature x, y and z performing? *And how do we know they are performing this way*" will improve your product pipeline. The last part is very important.
 
 It is not enough that someone simply states that something is performing wonderfully. These are likely the same people who pitched the feature in the first place. They put their ass on the line to make this happen. Of course they are going to stand up for their work. We need to understand *how* we know that something is performing.
 
@@ -308,7 +301,7 @@ We prefer data. Sometimes we don't have that. We only have feelings and anecdote
 #### Celebrate process and honesty, not just results
 Some companies punish people when they are wrong. Either overtly or with company culture. This can be something as small as a snarky comment in meetings. Either by the manager, or allowed by the manager.
 
-When you force your people to try to defend broken features because their reputation and eventually their job may be on the line, you run the risk of keeping bad features in your product. 
+When you force your people to try to defend broken features because their reputation and eventually their job may be on the line, you run the risk of keeping bad features in your product.
 
 This means you are not letting better features in. This means you are paying good money for bad features.
 
@@ -339,11 +332,11 @@ This came straight from the top and was the most important feature ever. At the 
 
 It took 3 people two months to build everything related to this. A total of 6 man-months of work. It also *severely* complicated the data model.
 
-Several years later I briefly worked with the same company again. One of my first tasks was *removing the feature*. At that point it had been slowing down development for years.  It was responsible for much of both the code complexity and database size. 
+Several years later I briefly worked with the same company again. One of my first tasks was *removing the feature*. At that point it had been slowing down development for years.  It was responsible for much of both the code complexity and database size.
 
 With the time spent removing the feature again, plus the maintenance done in the intermittent years, this single feature cost the company *12-18 months* of developer work. And this is not counting the cost the more complicated data model will have had on slowing down / having to reject other new features.
 
-In the end, the feature was used by under 50 customers. It was something needed by nobody. What the customers turned out to really want was much simpler manually curated content which they could choose from. 
+In the end, the feature was used by under 50 customers. It was something needed by nobody. What the customers turned out to really want was much simpler manually curated content which they could choose from.
 
 Something which could have been done in 1-2 weeks.
 
@@ -359,12 +352,12 @@ The company from the example above did one thing right: When the feature did not
 #### What is it?
 In the words of [Martin Fowler](https://martinfowler.com/bliki/UbiquitousLanguage.html): "the practice of building up a common, rigorous language between developers and users".
 
-To put it more plainly: 
+To put it more plainly:
 
 > A company must always ensure that developers use the same names and words to describe the business concepts as your business people.
 
 #### Why is it so important?
-One of my key takeaways from the amazing [DDD book](https://amzn.to/2KuwMKU) is that a Ubiquitous Language is one of the most important things to create and maintain in a software company. The reason for this is that without a Ubiquitous Language, developers and business people need to constantly mentally translate terms when communicating with each other. It makes it harder for each side to understand each other. It fosters silos between business and dev. 
+One of my key takeaways from the amazing [DDD book](https://amzn.to/2KuwMKU) is that a Ubiquitous Language is one of the most important things to create and maintain in a software company. The reason for this is that without a Ubiquitous Language, developers and business people need to constantly mentally translate terms when communicating with each other. It makes it harder for each side to understand each other. It fosters silos between business and dev.
 
 I have worked in companies where there was no Ubiquitous Language. Terms for important domain concepts had drifted twice between business and dev. "Campaign" in code meant either "Project" or "Advertisement" when talking to business. It confused everybody: Leadership, Sales, Product, and Development. It was the largest source of confusion for new developers. And because it had not been handled from the start, it was now a monumental effort to fix in code.
 
@@ -390,7 +383,7 @@ Remember, it is very easy for misunderstandings to happen over a text-based medi
 Jokes are okay, but should be used with caution.
 
 ##### Solving disagreements
-Strong disagreements happen. It is best to solve these face-to-face, else over a video call, or lastly via synchronous chat. 
+Strong disagreements happen. It is best to solve these face-to-face, else over a video call, or lastly via synchronous chat.
 
 Pull requests are *not* the place to have an argument.
 
@@ -402,7 +395,7 @@ Never be sarcastic or ironic. It is rude and almost guaranteed to be misundersto
 Agile is such an integral part of our work life today that it deserves its own section.
 
 ### Regular retrospectives
-Retrospectives are in my opinion the most important part of Agile. 
+Retrospectives are in my opinion the most important part of Agile.
 
 Retrospectives is the time we take to not just work but *improve how we work*. If your team was a saw, retrospectives is the time you take to sharpen that saw.
 
@@ -441,15 +434,15 @@ The team members will be giving answers to three questions:
 1. Everyone writes down at least 3-5 answers
 1. Each team member presents their answers
 
-The coach points to the first question "What went well" and asks the team to write down at least three answers. The team should have at least five minutes for this. 
+The coach points to the first question "What went well" and asks the team to write down at least three answers. The team should have at least five minutes for this.
 
-After the time is up, every team member presents their answers by putting their post-its on the board one-by-one while explaining them. Nobody else comments, unless it is to clarify the meaning. 
+After the time is up, every team member presents their answers by putting their post-its on the board one-by-one while explaining them. Nobody else comments, unless it is to clarify the meaning.
 
-By starting with "what went well?" We give the team a chance to both think positively and celebrate each other and what worked. This sets a positive frame for the rest of the meeting. 
+By starting with "what went well?" We give the team a chance to both think positively and celebrate each other and what worked. This sets a positive frame for the rest of the meeting.
 
 ##### What did not go so well?
 
-Here we discuss *why* something happened without getting into what can be done about it. 
+Here we discuss *why* something happened without getting into what can be done about it.
 
 1. Everyone writes down at least 3-5 answers
 1. Each team member presents their answers
@@ -542,7 +535,7 @@ Work-in-progress, or WIP, should be reduced as much as possible. The reason for 
 - Collaboration overhead
 - Planning overhead
 
-The context switching is by far the worst culprit of the above. Whenever a developer is working on more than one task at a time, they need to spend a non-trivial amount of time wrapping their head around both the business domain, the change we are trying to do with the code, as well as the code itself. In complex domains, changes or code, this can amount to a massive amount of overhead and time wasted. Don't do it. If at all possible, work on one thing at a time. 
+The context switching is by far the worst culprit of the above. Whenever a developer is working on more than one task at a time, they need to spend a non-trivial amount of time wrapping their head around both the business domain, the change we are trying to do with the code, as well as the code itself. In complex domains, changes or code, this can amount to a massive amount of overhead and time wasted. Don't do it. If at all possible, work on one thing at a time.
 
 #### Create topical git branches
 Create a single git branch per ticket. Work on that single branch. Sometimes a branch cannot or should not be merged into master by itself. In this case, create a pull request to a larger "epic" branch and merge into that. Then when the Epic branch is ready to merge to master create a pull request to do so.
@@ -588,14 +581,14 @@ The problem is when two people disagree about something important to them:
 
 Then you can have a very long and heated discussion during standup.
 
-To alleviate this problem, simply adopt the rule that it is always acceptable to ask "*hey, can we take this after standup?*". 
+To alleviate this problem, simply adopt the rule that it is always acceptable to ask "*hey, can we take this after standup?*".
 
-Then, whoever has a stake in the discussion simply stays behind after standup in order to finish what they were talking about. 
+Then, whoever has a stake in the discussion simply stays behind after standup in order to finish what they were talking about.
 
 This should be done any time a discussion is more than five to ten sentences.
 
 ### Sprints
-The main purpose of a sprint is not to scramble and rush to finish. It is to see how much work was done, so we can estimate how likely our larger deadlines are to hold water. 
+The main purpose of a sprint is not to scramble and rush to finish. It is to see how much work was done, so we can estimate how likely our larger deadlines are to hold water.
 
 I have found that often upper management care more about simply knowing if a project is on track or not. If not, how much is it off?
 
@@ -603,7 +596,7 @@ This way we are less likely to find big scary monsters in the closet three month
 
 This:
 
-"Based on Sprint performance in sprints one to six, we are expecting to be one month delayed total compared to original estimates." 
+"Based on Sprint performance in sprints one to six, we are expecting to be one month delayed total compared to original estimates."
 
 Is better than:
 
@@ -620,7 +613,7 @@ This choice depends largely on the level of syncing up required between teams. I
 Yes, it is a tired trope, but it is still true: Any system is only as good as its documentation.
 
 ### Be explicit
-You often see things which are implicitly understood in a system. Things which people are expected to "just know". This is implicit knowledge. Some of it is fine and unavoidable of course. The problem comes when you have too much implicit knowledge. Now it is hindering progress. 
+You often see things which are implicitly understood in a system. Things which people are expected to "just know". This is implicit knowledge. Some of it is fine and unavoidable of course. The problem comes when you have too much implicit knowledge. Now it is hindering progress.
 
 Too much implicit knowledge has two dangers:
 - Knowledge is forgotten / leaves the company and takes a long time to recover / reverse engineer
@@ -634,20 +627,20 @@ http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions -->
 
 > The code should not be the only source of truth
 
-Often in companies you see that there is no "source of truth" except from the code. Jira tickets are written for each Sprint, and then left to rot and grow obscure. When a new developer asks "how should X work" the solution is to read the code. The code is the only source of truth. 
+Often in companies you see that there is no "source of truth" except from the code. Jira tickets are written for each Sprint, and then left to rot and grow obscure. When a new developer asks "how should X work" the solution is to read the code. The code is the only source of truth.
 
 This is not ideal. Everything the developers do takes longer than necessary. In order to understand what to change for a feature the developers have to talk to three different people. After they start coding they need to come back to ask "what about this edge case" because nobody had thought about it when writing the ticket. This process *somewhat* works. Most of the time. But it is slow. Very slow. And for every feature, every bug, it gets slower and slower.
- 
+
 Then the inevitable happens: Engineering is being labeled as slow. Business is demanding faster results. Product managers are stressed. They stress the engineers. The engineers cut corners to "deliver the sprints". Maybe sick leave in engineering starts going up. Some people go down with stress. Guess what comes next:
 
 People. Start. Quitting.
-- Senior / talented people leave 
+- Senior / talented people leave
 
 Now someone discovers a bug in the code. They suspect that flow A is not correct because they are getting weird errors downstream from it in flow B. Flow A was created three years ago and nobody working on it now works in the company anymore. It is a mess of indirection and it is a bit hard to see everything it is supposed to do.
 
 In cases of doubt like these as to how something works, developers now have a lot of work just finding out how something should work. They have to read through 10+ files of source code, as well as dig up ancient Jira tickets to figure things out. Since it is hard to figure out *how it should work*, not how to code it, this takes up *everyone's* time: All three senior developers, as well as the product owner and two business people end up getting involved at some point. Everyone now has to context switch and spend time they should be using moving forward, on looking back.
 
-So now a simple bug takes a very long time to fix. Not because of the actual time to build it. Because it takes a long, long time to figure out 
+So now a simple bug takes a very long time to fix. Not because of the actual time to build it. Because it takes a long, long time to figure out
 
 <!-- TODO: Continue writing on this: Unfortunately, when the source of truth is left to the engineers to manage and discover all edge cases, you often also come across the notion that engineering is working slowly. -->
 
@@ -684,9 +677,9 @@ There is a lot going on here! It took me all of 5 minutes to write, and anyone w
 ### Clipboard history
 > Use a clipboard history manager. Even if you think you do not need it. Try it out for two weeks.
 
-I originally stumbled upon the advice of using a clipboard history manager [from an interview with Jeff Atwood](https://lifehacker.com/5950386/im-jeff-atwood-founder-of-stack-exchange-and-this-is-how-i-work), the founder of Stack Overflow. 
+I originally stumbled upon the advice of using a clipboard history manager [from an interview with Jeff Atwood](https://lifehacker.com/5950386/im-jeff-atwood-founder-of-stack-exchange-and-this-is-how-i-work), the founder of Stack Overflow.
 
-I had never used a Clipboard history app before. Now, 3 years later, I would not want to code without it. 
+I had never used a Clipboard history app before. Now, 3 years later, I would not want to code without it.
 
 The best one (as far as I know) for OSX is [Alfred with the Powerpack addon](https://www.alfredapp.com/).
 
