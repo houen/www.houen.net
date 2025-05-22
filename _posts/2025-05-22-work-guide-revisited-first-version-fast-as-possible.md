@@ -6,7 +6,7 @@ tags: [software development, work guide, reducing risk, first version]
 date: 2025-05-22 09:26 +0200
 ---
 
-Right now I may *think* I know what I am doing. However, I really do not. For this reason, I should get to the first version with as little effort as possible. This means I should not waste time on clever code.
+Right now I may *think* I know what I am doing. However, I really do not. For this reason, I should get to the first version of any code with as little effort as possible. This means I should not waste time on clever code.
 
 Get to the first version with as little effort as possible.
 
