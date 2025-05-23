@@ -7,11 +7,7 @@ tags: [startup, silos, culture, HR]
 ![The Polaroid wall at Crealytics in Berlin](/assets/2016-05-18-your-startup-needs-a-polaroid-wall/crealytics-polaroid-wall-berlin.jpg)
 The Polaroid wall at [Crealytics](https://crealytics.com/) in Berlin
 
-Note: Be sure to first read [Part 1: How Silos are hurting your startup]({% post_url 2016-05-15-silos-will-hurt-your-startup %}). Have you read it already? We will both get more out of this post if you read the other one first. You will get the backstory. I can assume you know it. Win-Win.
-
-Hi again. I hope I have made the case for why silos are hurting your startup. Here is a little trick to help break down silos.
-
-Here is a recap of my postulation from earlier:
+> Note: You might want to first read [How Silos are hurting your startup]({% post_url work_guide/2016-05-15-silos-will-hurt-your-startup %}).
 
 The best thing we can do against silos is let camaraderie and friendship develop between employees of different departments.
 
@@ -42,13 +38,8 @@ And when someone forgets the name of another employee, all they have to do is ta
 
 This is why your startup needs a polaroid wall.
 
-Thank you for your time.
+A common objection I hear at this point is this: “But we already have names and pictures on our website”. Yes. You do. And what does it take to update that website?
 
-PS: I highly recommend the [Fujifilm Instax Mini instant camera](https://amzn.to/3Uy9aU0). I have one myself, and it is just the right size for a company wall.
-
-PPS: A common objection I hear at this point is this: “But we already have names and pictures on our website”. Yes. You do. And what does it take to update that website? Let us compare:
-
-### The website way
 - Find the good digital camera. Who had it last? What event was it used at? Ok, here it is.
 - Now take the picture.
 - Now upload it to a computer.
@@ -57,16 +48,20 @@ PPS: A common objection I hear at this point is this: “But we already have nam
 - Take a new one.
 - Now upload it to the website. Oh, you need IT to do that? They are too busy developing features. File a ticket for updating the employee page.
 - Wait two weeks.
-- Now it is updated. 
+- Now it is updated.
 
-### Polariod way
+Now compare that with the polaroid way:
+
 - Take picture
 - Write name
 - Put on wall
-- Done!
 
-I know, I know, maybe all of the above hassle does not apply to your company. Then you are one of the lucky few. Trust me on this.
+I know, I know, maybe all of the above website hassle does not apply to your company. Then you are one of the lucky few. Trust me on this.
 But even in companies where it is a lot easier, a polaroid wall is still superior. It is just more _fun_. And you do not need to worry about it being public and "part of your branding".
-You should not ask your employees to help brand your company with their "internal" hi-everyone pictures. They will not show their full potential. And especially your engineers will resent it.  
+You should not ask your employees to help brand your company with their "internal" hi-everyone pictures. They will not show their full potential. And especially your engineers will resent it.
 
 Get a polaroid wall. Your silos will be a _little_ less powerful for it.
+
+> PS: I highly recommend the [Fujifilm Instax Mini instant camera](https://amzn.to/3Uy9aU0). I have one myself, and it is just the right size for a company wall.
+
+{% include work_guide_revisited.html %}

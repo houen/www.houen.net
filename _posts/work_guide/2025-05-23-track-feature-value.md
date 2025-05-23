@@ -19,7 +19,7 @@ The best way to get data on which features are performing is with raw analytics 
 - How many people convert via the new button, and what is their *customer lifetime value*?
 - Start a funnel from this new CTA button, and see how it performs. How many people drop off in the funnel? Do they come back? How does this compare with the other funnels? Would it be better to let the customer explore the page longer before showing them a CTA button?
 
-#### Tracking non-trackable features
+## Tracking non-trackable features
 Sometimes, there is no simple or hard-and-fast way to measure a features performance. But we must still make an effort to try. At least make it a regular topic in the regular product meetings.
 
 Just opening a conversation around "how is feature x, y and z performing? *And how do we know they are performing this way*" will improve your product pipeline. The last part is very important.

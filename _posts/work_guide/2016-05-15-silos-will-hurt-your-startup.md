@@ -4,10 +4,6 @@ title: Silos will hurt your startup. Friendships will make you strong
 tags: [startup, silos, culture, HR]
 ---
 
-![Silos will hurt your startup](/assets/2016-05-15-silos-will-hurt-your-startup/silos-will-hurt-your-startup.jpg)
-
-**Update: [Part 2: Your startup needs a polaroid wall]({% post_url 2016-05-18-your-startup-needs-a-polaroid-wall %}) is now up**. Read this one first, though. There is a link in the bottom as well.
-
 Are you just five people to your startup? I envy you.
 I envy the shared direction you feel with your colleagues. How you feel at one with the vision. You are one entity fighting for a common goal. You can rely on your teammates. They can rely on you. This is a wonderful feeling.
 
@@ -50,4 +46,6 @@ Now go forth, and do all in your power to help your employees make friends with 
 
 For insight into how to make your company **GREAT**, I highly recommend the book [From Good To Great by Jim C. Collins](https://amzn.to/3WzxE14)
 
-PS: I had more to say about silos than I first thought. So this blog post came to life. There is now also a **Part 2:** [Why your large-ish startup absolutely needs a polaroid wall]({% post_url 2016-05-18-your-startup-needs-a-polaroid-wall %}).
+> See also [your startup needs a polaroid wall]({% post_url work_guide/2016-05-18-your-startup-needs-a-polaroid-wall %}).
+
+{% include work_guide_revisited.html %}
