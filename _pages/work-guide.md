@@ -30,7 +30,9 @@ I try to use these as principles to help me do better work.
 - [Test the real thing as much as possible]({% post_url work_guide/2025-05-04-test-the-real-thing-as-much-as-possible %})
 
 ---
+
 Old work guide: These parts have not been ported to posts yet
+
 ---
 
 ### Pull Requests / Merge Requests
