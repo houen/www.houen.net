@@ -13,6 +13,4 @@ Get to the first version with as little effort as possible.
 ## As simple code as possible (simple beats DRY)
 Simple code beats clever code - this is doubly true for the first version! Clever code may be easier to extend / adapt, but it is harder to *fundamentally* change. The likelihood is very high that I will have to fundamentally change the first version of any project.
 
-> **Revisiting my work guide.**
-> I have been working on a work guide for a while now. That is an understatement. I started it in 2011. Then I left it to sit for many years. I will try to revisit it again now in little bite-sized posts.
-> Click the "work guide" link below for more.
+{% include work_guide_revisited.html %}

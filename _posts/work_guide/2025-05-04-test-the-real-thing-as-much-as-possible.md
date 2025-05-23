@@ -73,6 +73,4 @@ The above "test" is high-level. I can changes any of the underlying parts withou
 
 This means I can change whatever I want about the underlying code without the test breaking, as long as the parts a user cares about works.
 
-> **Revisiting my work guide.**
-> I have been working on a work guide for a while now. That is an understatement. I started it in 2011. Then I left it to sit for many years. I will try to revisit it again now in little bite-sized posts.
-> Click the "work guide" link below for more.
+{% include work_guide_revisited.html %}

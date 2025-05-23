@@ -194,6 +194,6 @@ With enough people, you will at some point need to split into multiple services.
 This again adds an amazing amount of overhead. Hiring more engineers is a patch-job, not a perfect solution.
 For more on this, see the book [The mythical man-month](/books).
 
-> **Revisiting my work guide.**
-> I have been working on a work guide for a while now. That is an understatement. I started it in 2011. Then I left it to sit for many years. I will try to revisit it again now in little bite-sized posts.
-> Click the "work guide" link below for more.
+Features are expensive to add. So it is important to [track feature value]({% post_url work_guide/2025-05-23-track-feature-value %})
+
+{% include work_guide_revisited.html %}

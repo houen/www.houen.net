@@ -121,6 +121,4 @@ I get satisfaction from checking the boxes completed during the day. When it is 
 
 There you have it. This is my system for keeping track of my daily tasks, and keeping my head clear. I know it can seem trivial. It is a small change, with a big impact. For me it has made a huge difference. I can focus on what I am doing without worrying about what I need to do next. I can more easily achieve “flow”.
 
-> **Revisiting my work guide.**
-> I have been working on a work guide for a while now. That is an understatement. I started it in 2011. Then I left it to sit for many years. I will try to revisit it again now in little bite-sized posts.
-> Click the "work guide" link below for more.
+{% include work_guide_revisited.html %}

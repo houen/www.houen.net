@@ -37,6 +37,4 @@ There are a *lot* of people involved in building each feature! And this is how i
 
 And the above is only considering the up-front cost of building the feature. After that comes [the long tail engineering cost]({% post_url work_guide/2025-05-22-the-long-tail-engineering-cost-of-features %}).
 
-> **Revisiting my work guide.**
-> I have been working on a work guide for a while now. That is an understatement. I started it in 2011. Then I left it to sit for many years. I will try to revisit it again now in little bite-sized posts.
-> Click the "work guide" link below for more.
+{% include work_guide_revisited.html %}
