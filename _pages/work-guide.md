@@ -29,11 +29,16 @@ I try to use these as principles to help me do better work.
 
 - [Test the real thing as much as possible]({% post_url work_guide/2025-05-04-test-the-real-thing-as-much-as-possible %})
 
+<br>
+<br>
+<br>
+
 ---
 
 Old work guide: These parts have not been ported to posts yet
 
----
+<br>
+<br>
 
 ### Pull Requests / Merge Requests
 A Pull Request (PR), or Merge Request (MR) is the act of requesting to pull / merge code from one Git branch into another. They are called Pull Requests in GitHub and Merge Requests in Gitlab. They are exactly the same thing, and will have one or the other name in a company depending on the code organisation platform used.
